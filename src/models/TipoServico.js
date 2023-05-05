@@ -10,7 +10,7 @@ class TipoServico extends Model {
           validate: {
             notEmpty: { msg: "Nome do Serviço deve ser preenchido!" },
             len: {
-              args: [2, 10],
+              args: [2, 30],
               msg: "Nome do Serviço deve ter entre 2 e 10 letras!"
             }
           }

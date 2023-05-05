@@ -1,3 +1,5 @@
+//ALISON
+
 import { Model, DataTypes } from 'sequelize';
 
 class Funcionario extends Model {
@@ -29,7 +31,7 @@ class Funcionario extends Model {
         validate: {
           isEmail: { msg: "Email do Funcionário deve ser preenchido 'exemplo@exemplo.com'!" },
           notEmpty: { msg: "Email do Funcionário deve ser preenchido!" },
-          len: { args: [2, 20], msg: "Email do Funcionário deve ter entre 2 e 20 caracteres!" }
+          len: { args: [2, 40], msg: "Email do Funcionário deve ter entre 2 e 20 caracteres!" }
         }
       },
       SENHA: { 

@@ -1,3 +1,5 @@
+//ALISON
+
 import { Model, DataTypes } from "sequelize";
 
 class FinalizacaoServico extends Model {

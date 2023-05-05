@@ -1,20 +1,23 @@
-//ALISON
+//CAMILA
 
 import { Model, DataTypes } from "sequelize";
 
 class Veiculo extends Model {
   static init(sequelize) {
     super.init({
-        PLACA: {
-          type: DataTypes.STRING,
-          validate: {
-            notEmpty: { msg: "A Placa do Veiculo deve ser preenchido!" },
-            len: {
-              args: ["{3}-[0-9]{4}"],
-              msg: "A Placa do Veiculo deve ter entre aaa-nnnn!"
-            }
+      PLACA: {
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: { msg: "A Placa do Veiculo deve ser preenchido!" },
+          len: {
+            args: [8],
+            msg: "A Placa do Veiculo deve ter 8 caracteres!"
           }
         },
+        set(value) {
+          this.setDataValue('PLACA', value.toUpperCase().replace(/(.{3})(.{4})/, "$1-$2"));
+        }
+      },
         MARCA: {
           type: DataTypes.STRING,
           validate: {

@@ -1,3 +1,5 @@
+//CAMILA
+
 import { Model, DataTypes } from 'sequelize';
 
 class Cliente extends Model {
@@ -29,7 +31,7 @@ class Cliente extends Model {
         validate: {
           isEmail: true,
           notEmpty: { msg: "Email do Cliente deve ser preenchido!" },
-          len: { args: [2, 20], msg: "Email do Cliente deve ter entre 2 e 20 caracteres!" }
+          len: { args: [2, 50], msg: "Email do Cliente deve ter entre 2 e 20 caracteres!" }
         }
       },
       QTD_LAVAGEM: { 
