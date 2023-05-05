@@ -3,6 +3,8 @@ import express from "express";
 import { FilialController } from "./controllers/FilialController.js"
 import { FuncionarioController } from "./controllers/FuncionarioController.js"
 import { TipoServicoController } from "./controllers/TipoServicoController.js"
+import { ClienteController } from "./controllers/ClienteController.js";
+import { VeiculoController } from "./controllers/VeiculoController.js";
 
 const routes = express.Router();
 
@@ -23,5 +25,17 @@ routes.get('/tiposervico/:id', TipoServicoController.findByPk);
 routes.post('/tiposervico', TipoServicoController.create);
 routes.put('/tiposervico/:id', TipoServicoController.update);
 routes.delete('/tiposervico/:id', TipoServicoController.delete);
+
+routes.get('/cliente', ClienteController.findAll);
+routes.get('/cliente/:id', ClienteController.findByPk);
+routes.post('/cliente', ClienteController.create);
+routes.put('/cliente/:id', ClienteController.update);
+routes.delete('/cliente/:id', ClienteController.delete);
+
+routes.get('/veiculo', VeiculoController.findAll);
+routes.get('/veiculo/:id', VeiculoController.findByPk);
+routes.post('/veiculo', VeiculoController.create);
+routes.put('/veiculo/:id', VeiculoController.update);
+routes.delete('/veiculo/:id', VeiculoController.delete);
 
 export default routes;
