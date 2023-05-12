@@ -17,7 +17,7 @@ class Cliente extends Model {
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "CPF do Cliente deve ser preenchido!" },
-          is: {args: ["[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}"], msg: "CPF do Cliente deve seguir o padrão NNN.NNN.NNN-NN!" },
+          is: {args: ["[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}\\-[0-9]{2}"], msg: "CPF do Cliente deve seguir o padrão NNN.NNN.NNN-NN!" },
         }
       },
       TELEFONE: { 
@@ -31,7 +31,7 @@ class Cliente extends Model {
         validate: {
           isEmail: true,
           notEmpty: { msg: "Email do Cliente deve ser preenchido!" },
-          len: { args: [2, 50], msg: "Email do Cliente deve ter entre 2 e 20 caracteres!" }
+          len: { args: [2, 50], msg: "Email do Cliente deve ter entre 2 e 50 caracteres!" }
         }
       },
       QTD_LAVAGEM: { 
@@ -76,7 +76,7 @@ class Cliente extends Model {
       type: DataTypes.DATEONLY, 
       validate: {
         isDate: { msg: "Nascimento do Cliente deve ser preenchido!" },
-        is: {args: ["[0-9]{4}\-[0-9]{2}\-[0-9]{2}"], msg: "Nascimento do Cliente deve seguir o padrão yyyy-MM-dd!" }
+        is: {args: ["[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}"], msg: "Nascimento do Cliente deve seguir o padrão yyyy-MM-dd!" }
       }
     }
     }, { sequelize, modelName: 'CLIENTE', tableName: 'CLIENTE' })

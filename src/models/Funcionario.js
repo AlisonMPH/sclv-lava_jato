@@ -81,7 +81,7 @@ class Funcionario extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.FILIAL, {as: 'FILIAL', foreignKey: {name: 'IDFILIAL' , allowNull: false, validate: {notNull: {msg: 'Filial do Funcionário deve ser preenchido!'}}}});
+    this.belongsTo(models.FILIAL, {as: 'FILIAL', foreignKey: {name: 'IDFILIAL' , allowNull: false, validate: {notNull: {msg: 'Filial do Funcionário deve ser preenchido2321!'}}}});
   }
   
 }

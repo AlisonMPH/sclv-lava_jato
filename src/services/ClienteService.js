@@ -15,21 +15,21 @@ class ClienteService {
 
     static async create(req) {
         const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO } = req.body;
-        if (bairro == null) throw 'O Bairro do Cliente deve ser preenchido!';
+        if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
         const t = await sequelize.transaction();
-        const obj = await Cliente.create({ nome, cpf, rua, numero, debito, nascimento, bairroId: bairro.id }, { transaction: t });
+        const obj = await Cliente.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO }, { transaction: t });
         await t.commit();
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { nome, cpf, rua, numero, debito, nascimento, bairro, telefones } = req.body;
-        if (bairro == null) throw 'O Bairro do Cliente deve ser preenchido!';
+        const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO } = req.body;
+        if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
         const obj = await Cliente.findByPk(id, { include: { all: true, nested: true } });
         if (obj == null) throw 'Cliente não encontrado!';
         const t = await sequelize.transaction();
-        Object.assign(obj, { nome, cpf, rua, numero, debito, nascimento, bairroId: bairro.id });
+        Object.assign(obj, { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO });
         await obj.save({ transaction: t });
         await t.commit();
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });

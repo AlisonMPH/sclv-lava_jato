@@ -1,4 +1,5 @@
 import { Funcionario } from "../models/Funcionario.js";
+import { Filial } from "../models/Filial.js";
 
 import sequelize from '../config/database-inserts.js';
 
@@ -17,7 +18,8 @@ class FuncionarioService {
 
   static async create(req) {
     const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO, FILIAL } = req.body;
-    if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
+    console.log(FILIAL);
+    //if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
     const obj = await Funcionario.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO, IDFILIAL: FILIAL.ID });
     return await Funcionario.findByPk(obj.id, { include: { all: true, nested: true } });
   }
