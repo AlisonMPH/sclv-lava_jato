@@ -279,6 +279,23 @@ function databaseInserts() {
                 ANO: 2022,
                 IDCLIENTE: 2
                 });
+                //STATUS
+                const status1 = Status.create({
+                  STATUS: "AGENDADO"
+                })
+                const status2 = Status.create({
+                  STATUS: "PAGO"
+                })
+                const status3 = Status.create({
+                  STATUS: "FINALIZADO"
+                })
+                //FORMA_PAGAMENTO
+                const FormaPagamento1 = FormaPagamento.create({
+                  FORMA_PAG	: "DINHEIRO"
+                })
+                const FormaPagamento2 = FormaPagamento.create({
+                  FORMA_PAG	: "CARTAO"
+                })
 
 
     })();

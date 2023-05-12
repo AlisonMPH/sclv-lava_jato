@@ -13,4 +13,5 @@ class Status extends Model {
   
     }
 }
+
 export { Status };

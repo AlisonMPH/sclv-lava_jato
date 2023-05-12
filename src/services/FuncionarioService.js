@@ -18,8 +18,7 @@ class FuncionarioService {
 
   static async create(req) {
     const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO, FILIAL } = req.body;
-    console.log(FILIAL);
-    //if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
+    if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
     const obj = await Funcionario.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO, IDFILIAL: FILIAL.ID });
     return await Funcionario.findByPk(obj.id, { include: { all: true, nested: true } });
   }
