@@ -5,6 +5,7 @@ import { Status } from "../models/Status.js";
 
 import sequelize from '../config/database-inserts.js';
 import { QueryTypes } from 'sequelize';
+import { ClienteService } from "./ClienteService.js";
 
 class FinalizacaoServicoService {
 
@@ -70,7 +71,7 @@ class FinalizacaoServicoService {
     if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
     const obj = await FinalizacaoServico.findByPk(id, { include: { all: true, nested: true } });
     if (obj == null) throw 'Funcionário não encontrado!';
-    Object.assign(obj, { DATA_SAIDA, OBSERVACOES_SAIDA, CONF_PAG, 
+    Object.assign(obj, { DATA_SAIDA, OBSERVACOES_SAIDA, CONF_PAG, VALOR_TOTAL,
     IDAGENDAMENTO_SERVICO: AGENDAMENTO_SERVICO.ID, IDFORMA_PAGAMENTO : FORMA_PAGAMENTO.ID, IDSTATUS : STATUS.ID  });
     await obj.save();
     return await FinalizacaoServico.findByPk(obj.id, { include: { all: true, nested: true } });
@@ -84,9 +85,51 @@ class FinalizacaoServicoService {
     return obj;
   }
 
-  static async verificarRegrasDeNegocio(req){
-
+  static async updateDescontoLavagem(req) {
+    const { id } = req.params;
+    const { DATA_SAIDA, OBSERVACOES_SAIDA, CONF_PAG, AGENDAMENTO_SERVICO, FORMA_PAGAMENTO, STATUS, VALOR_TOTAL } = req.body;
+    if (FILIAL == null) throw 'A Filial do Funcionário deve ser preenchido!';
+    const obj = await FinalizacaoServico.findByPk(id, { include: { all: true, nested: true } });
+    if (obj == null) throw 'Funcionário não encontrado!';
+    Object.assign(obj, { DATA_SAIDA, OBSERVACOES_SAIDA, CONF_PAG, VALOR_TOTAL, 
+    IDAGENDAMENTO_SERVICO: AGENDAMENTO_SERVICO.ID, IDFORMA_PAGAMENTO : FORMA_PAGAMENTO.ID, IDSTATUS : STATUS.ID  });
+    await obj.save();
+    return await FinalizacaoServico.findByPk(obj.id, { include: { all: true, nested: true } });
   }
+
+  static async verificarRegrasDeNegocio(req){
+    // Regra de Negocio 1 -> Aplicar desconto de 20% no valor final caso o cliente seja um funcionário.
+    const clienteFuncionario = await ClienteService.findClienteFuncionario()
+    const { AGENDAMENTO_SERVICO } = req.body;
+    const { FINALIZACAO_SERVICO } = req.body;
+    const agendamento = await AgendamentoServico.findByPk(AGENDAMENTO_SERVICO.id, { include: { all: true, nested: true } });
+    const finalizacao = await FinalizacaoServico.findByPk(FINALIZACAO_SERVICO.id, { include: { all: true, nested: true } });
+    const cliente = a.VEICULO.CLIENTE;
+    const qtd_lavagem = cliente.QTD_LAVAGEM;
+    const clienteCPF = cliente.CPF;
+    const valor = a.TIPO_SERVICO.PRECO;
+    //const funcionario_cliente = Funcionario.findAll({where: {cpf == cliente.CPF}});
+    const funcionario_cliente = await sequelize.query("SELECT * FROM FUNCIONARIO WHERE FUNCIONARIO.CPF = :clienteCPF ", { replacements: { clienteCPF: clienteCPF }, type: QueryTypes.SELECT });
+    // REGRA 1
+    if (funcionario_cliente != null)
+    {
+      valor = (valor * 0.8);
+    }
+
+
+    if (a.VEICULO.CLIENTE.QTD_LAVAGEM != 0)
+    {
+      if (a.VEICULO.CLIENTE.QTD_LAVAGEM % 3 == 0){
+        a.TIPO_SERVICO.PRECO = (a.TIPO_SERVICO.PRECO * 0.9);
+        a.VEICULO.CLIENTE.QTD_LAVAGEM = a.VEICULO.CLIENTE.QTD_LAVAGEM + 1;
+      }
+      else
+      {
+        qtd_lavagem = qtd_lavagem + 1;
+      }
+    }
+
+    }
 
 
 }

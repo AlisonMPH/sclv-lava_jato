@@ -78,6 +78,10 @@ class Cliente extends Model {
         isDate: { msg: "Nascimento do Cliente deve ser preenchido!" },
         is: {args: ["[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}"], msg: "Nascimento do Cliente deve seguir o padrão yyyy-MM-dd!" }
       }
+    },
+    IS_DEVEDOR: {
+      type: DataTypes.BOOLEAN, 
+      defaultValue: false
     }
     }, { sequelize, modelName: 'CLIENTE', tableName: 'CLIENTE' })
   }

@@ -17,11 +17,18 @@ class FinalizacaoServico extends Model {
           }
         },
         CONF_PAG: {
+          defaultValue: 0,
           type: DataTypes.INTEGER,
           validate: {
             
           }
+        },
+        VALOR_TOTAL:{
+          defaultValue: 0,
+          type: DataTypes.FLOAT,
+          validate: {
         }
+      }
 
     }, { sequelize, modelName: "FINALIZACAO_SERVICO", tableName: "FINALIZACAO_SERVICO" });
   }

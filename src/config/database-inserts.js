@@ -39,7 +39,7 @@ function databaseInserts() {
         //CLIENTE
         const cliente1 = await Cliente.create({
             NOME: "Camila Silva",
-            CPF: "123.456.789-00",
+            CPF: "123.456.789-04",
             TELEFONE: "(11) 1111-1111",
             EMAIL: "camila.silva@gmail.com",
             QTD_LAVAGEM: 0,
@@ -53,7 +53,7 @@ function databaseInserts() {
             
             const cliente2 = await Cliente.create({
             NOME: "Paulo Oliveira",
-            CPF: "987.654.321-00",
+            CPF: "987.654.321-03",
             TELEFONE: "(11) 2222-2222",
             EMAIL: "paulo.oliveira@gmail.com",
             QTD_LAVAGEM: 2,
@@ -67,7 +67,7 @@ function databaseInserts() {
             
             const cliente3 = await Cliente.create({
             NOME: "Ana Souza",
-            CPF: "789.123.456-00",
+            CPF: "789.123.456-02",
             TELEFONE: "(11) 3333-3333",
             EMAIL: "ana.souza@gmail.com",
             QTD_LAVAGEM: 5,
@@ -95,7 +95,7 @@ function databaseInserts() {
             
             const cliente5 = await Cliente.create({
             NOME: "Juliana Almeida",
-            CPF: "654.321.987-00",
+            CPF: "654.321.987-01",
             TELEFONE: "(11) 5555-5555",
             EMAIL: "juliana.almeida@gmail.com",
             QTD_LAVAGEM: 3,
@@ -106,6 +106,20 @@ function databaseInserts() {
             BAIRRO: "Jardins",
             DATA_NASCIMENTO: "1992-03-02"
             });
+            
+            const cliente6 = await Cliente.create({
+              NOME: "Alison Mozer",
+              CPF: "149.094.167-30",
+              TELEFONE: "(11) 5555-5555",
+              EMAIL: "alison.mozer@gmail.com",
+              QTD_LAVAGEM: 3,
+              SENHA: "12345678",
+              RUA: "Rua das Azaleias",
+              NUMERO: 500,
+              CIDADE: "São Paulo",
+              BAIRRO: "Jardins",
+              DATA_NASCIMENTO: "2001-06-11"
+              });
             
             //FILIAL
             const filial1 = await Filial.create({
@@ -238,6 +252,20 @@ function databaseInserts() {
                 DATA_NASCIMENTO: "1994-04-17",
                 IDFILIAL: 3 // assumindo que a filial de ID 5 já foi cadastrada anteriormente
               });
+              
+              const funcionario8 = Funcionario.create({
+                NOME: "Alison Mozer",
+                CPF: "149.094.167-30",
+                TELEFONE: "(31) 98765-4321",
+                EMAIL: "alison.mozer@example.com",
+                SENHA: "12345678",
+                RUA: "Rua das Palmeiras",
+                NUMERO: 789,
+                CIDADE: "Belo Horizonte",
+                BAIRRO: "Savassi",
+                DATA_NASCIMENTO: "2001-06-11",
+                IDFILIAL: 3 // assumindo que a filial de ID 5 já foi cadastrada anteriormente
+              });
               //VEICULO
                 const veiculo1 = Veiculo.create({
                 PLACA: "ABC1234",
@@ -279,6 +307,14 @@ function databaseInserts() {
                 ANO: 2022,
                 IDCLIENTE: 2
                 });
+                const veiculo6 = Veiculo.create({
+                PLACA: "ABC6789",
+                MARCA: "Volkswagen",
+                MODELO: "Parati",
+                COR: "Prata",
+                ANO: 2010,
+                IDCLIENTE: 6
+                });
                 //STATUS
                 const status1 = Status.create({
                   STATUS: "AGENDADO"
@@ -296,8 +332,7 @@ function databaseInserts() {
                 const FormaPagamento2 = FormaPagamento.create({
                   FORMA_PAG	: "CARTAO"
                 })
-
-
+                
     })();
 }    
 
