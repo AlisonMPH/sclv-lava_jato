@@ -1,5 +1,6 @@
 import { Cliente } from "../models/Cliente.js";
 import sequelize from '../config/database-inserts.js';
+import { QueryTypes } from 'sequelize';
 
 class ClienteService {
     static async findAll() {
@@ -16,9 +17,7 @@ class ClienteService {
     static async create(req) {
         const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO } = req.body;
         if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
-        const t = await sequelize.transaction();
-        const obj = await Cliente.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO }, { transaction: t });
-        await t.commit();
+        const obj = await Cliente.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO });
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 
@@ -28,10 +27,8 @@ class ClienteService {
         if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
         const obj = await Cliente.findByPk(id, { include: { all: true, nested: true } });
         if (obj == null) throw 'Cliente não encontrado!';
-        const t = await sequelize.transaction();
         Object.assign(obj, { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO });
-        await obj.save({ transaction: t });
-        await t.commit();
+        await obj.save();
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 
@@ -46,13 +43,12 @@ class ClienteService {
             throw "Não é possível remover um cliente associado a empréstimos ou reservas!";
         }
     }
-    
-    static async findClienteFuncionario(id) {
-        const { clienteId } = req.params;
-        const objs = await sequelize.query("SELECT * FROM CLIENTE C, FUNCIONARIO F WHERE C.CPF = F.CPF AND C.ID= :clienteId", { replacements: { clienteId: clienteId }, type: QueryTypes.SELECT });
-        if (objs != null)
+
+    static async findDevedores() {
+        const objs = await sequelize.query("SELECT clientes.*  FROM clientes WHERE is_devedor = true", { type: QueryTypes.SELECT }); 
+        console.log(objs); 
         return objs;
-    }
+      }
 }
 
 export { ClienteService };

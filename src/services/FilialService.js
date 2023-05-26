@@ -14,7 +14,7 @@ class FilialService {
   }
 
   static async create(req) {
-    const { nome, prazo, preco } = req.body;
+    const { NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ } = req.body;
     const obj = await Filial.create({ NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ});
     return await Filial.findByPk(obj.id, { include: { all: true, nested: true }});
   }

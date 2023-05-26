@@ -5,25 +5,25 @@ import { Model, DataTypes } from "sequelize";
 class AgendamentoServico extends Model {
   static init(sequelize) {
     super.init({
-        DATA_ENTRADA: {
+        data_entrada: {
           type: DataTypes.DATEONLY,
           validate: {
           }
         },
-        OBSERVACOES_ENTRADA: {
+        observacoes_entrada: {
           type: DataTypes.STRING,
           validate: {
             
           }
         }
 
-    }, { sequelize, modelName: "AGENDAMENTO_SERVICO", tableName: "AGENDAMENTO_SERVICO" });
+    }, { sequelize, modelName: "agendamento", tableName: "agendamentos" });
   }
 
 static associate(models) {
-    this.belongsTo(models.FUNCIONARIO, {as: 'FUNCIONARIO', foreignKey: {name: 'IDFUNCIONARIO' , allowNull: false, validate: {notNull: {msg: 'Funcionario deve ser preenchido!'}}}});
-    this.belongsTo(models.VEICULO, {as: 'VEICULO', foreignKey: {name: 'IDVEICULO' , allowNull: false, validate: {notNull: {msg: 'Veiculo deve ser preenchido!'}}}});
-    this.belongsTo(models.TIPO_SERVICO, {as: 'TIPO_SERVICO', foreignKey: {name: 'IDTIPO_SERVICO' , allowNull: false, validate: {notNull: {msg: 'Tipo Serviço deve ser preenchido!'}}}});
+    this.belongsTo(models.funcionario, {as: 'funcionario', foreignKey: {name: 'idfuncionario' , allowNull: false, validate: {notNull: {msg: 'Funcionario deve ser preenchido!'}}}});
+    this.belongsTo(models.veiculo, {as: 'veiculo', foreignKey: {name: 'idveiculo' , allowNull: false, validate: {notNull: {msg: 'Veiculo deve ser preenchido!'}}}});
+    this.belongsTo(models.tipo_servico, {as: 'tipo_servico', foreignKey: {name: 'idtipo_servico' , allowNull: false, validate: {notNull: {msg: 'Tipo Serviço deve ser preenchido!'}}}});
     }
 }
 

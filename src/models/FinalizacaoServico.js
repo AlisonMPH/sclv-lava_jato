@@ -5,38 +5,31 @@ import { Model, DataTypes } from "sequelize";
 class FinalizacaoServico extends Model {
   static init(sequelize) {
     super.init({
-        DATA_SAIDA: {
+        data_saida: {
           type: DataTypes.DATEONLY,
           validate: {
           }
         },
-        OBSERVACOES_SAIDA: {
+        observacoes_saida: {
           type: DataTypes.STRING,
           validate: {
             
           }
         },
-        CONF_PAG: {
-          defaultValue: 0,
+        conf_pag: {
           type: DataTypes.INTEGER,
           validate: {
             
           }
-        },
-        VALOR_TOTAL:{
-          defaultValue: 0,
-          type: DataTypes.FLOAT,
-          validate: {
         }
-      }
 
-    }, { sequelize, modelName: "FINALIZACAO_SERVICO", tableName: "FINALIZACAO_SERVICO" });
+    }, { sequelize, modelName: "finalizacao", tableName: "finalizacoes" });
   }
 
 static associate(models) {
-    this.belongsTo(models.AGENDAMENTO_SERVICO, {as: 'AGENDAMENTO_SERVICO', foreignKey: {name: 'IDAGENDAMENTO_SERVICO' , allowNull: false, validate: {notNull: {msg: 'Funcionario deve ser preenchido!'}}}});
-    this.belongsTo(models.FORMA_PAGAMENTO, {as: 'FORMA_PAGAMENTO', foreignKey: {name: 'IDFORMA_PAGAMENTO' , allowNull: false, validate: {notNull: {msg: 'Veiculo deve ser preenchido!'}}}});
-    this.belongsTo(models.STATUS, {as: 'STATUS', foreignKey: {name: 'IDSTATUS' , allowNull: false, validate: {notNull: {msg: 'Tipo Serviço deve ser preenchido!'}}}});
+    this.belongsTo(models.agendamento, {as: 'agendamento', foreignKey: {name: 'id_agendamento' , allowNull: false, validate: {notNull: {msg: 'Funcionario deve ser preenchido!'}}}});
+    this.belongsTo(models.forma_pagamento, {as: 'forma_pagamento', foreignKey: {name: 'idforma_pagamento' , allowNull: false, validate: {notNull: {msg: 'Veiculo deve ser preenchido!'}}}});
+    this.belongsTo(models.status, {as: 'status', foreignKey: {name: 'idstatus' , allowNull: false, validate: {notNull: {msg: 'Tipo Serviço deve ser preenchido!'}}}});
     }
 }
 
