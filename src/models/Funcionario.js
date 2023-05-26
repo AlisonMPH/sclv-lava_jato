@@ -6,27 +6,27 @@ class Funcionario extends Model {
 
   static init(sequelize) {
     super.init({
-      NOME: { 
+      nome: { 
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "Nome do Funcionário deve ser preenchido!" },
           len: { args: [2, 50], msg: "Nome do Funcionário deve ter entre 2 e 50 letras!" }
         }
       },
-      CPF: { 
+      cpf: { 
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "CPF do Funcionário deve ser preenchido!" },
           is: {args: ["[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}"], msg: "CPF do Funcionário deve seguir o padrão NNN.NNN.NNN-NN!" },
         }
       },
-      TELEFONE: { 
+      telefone: { 
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "Telefone do Funcionário deve ser preenchido!" }
         }
       },
-      EMAIL: { 
+      email: { 
         type: DataTypes.STRING, 
         validate: {
           isEmail: { msg: "Email do Funcionário deve ser preenchido 'exemplo@exemplo.com'!" },
@@ -34,26 +34,26 @@ class Funcionario extends Model {
           len: { args: [2, 40], msg: "Email do Funcionário deve ter entre 2 e 20 caracteres!" }
         }
       },
-      SENHA: { 
+      senha: { 
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "Senha do Funcionário deve ser preenchida!" },
           len: { args: [6, 10], msg: "Senha do Funcionário deve ter entre 6 e 10 caracteres!" }
         }
       },
-      RUA: { 
+      rua: { 
         type: DataTypes.STRING, 
         validate: {
           notEmpty: { msg: "Rua do Funcionário deve ser preenchida!" }
         }
       },
-      NUMERO: { 
+      numero: { 
         type: DataTypes.INTEGER, 
         validate: {
           isInt: { msg: "Número da Casa do Funcionário deve ser preenchido com um valor inteiro!" }
         }
       },
-      CIDADE: {
+      cidade: {
         type: DataTypes.STRING,
         validate: {
             notEmpty: { msg: "Definir o nome da Cidade do Funcionario!" },
@@ -61,7 +61,7 @@ class Funcionario extends Model {
 
         }
     },
-      BAIRRO: {
+      bairro: {
         type: DataTypes.STRING,
         validate: {
             notEmpty: { msg: "Definir o nome do Bairro do Funcionario!" },
@@ -69,7 +69,7 @@ class Funcionario extends Model {
 
         }
     },
-    DATA_NASCIMENTO: { 
+    data_nascimento: { 
       type: DataTypes.DATEONLY, 
       validate: {
         isDate: { msg: "Nascimento do Funcionario deve ser preenchido!" },
@@ -77,11 +77,11 @@ class Funcionario extends Model {
       }
     }
       
-    }, { sequelize, modelName: 'FUNCIONARIO', tableName: 'FUNCIONARIO' })
+    }, { sequelize, modelName: 'funcionario', tableName: 'funcionarios' })
   }
 
   static associate(models) {
-    this.belongsTo(models.FILIAL, {as: 'FILIAL', foreignKey: {name: 'IDFILIAL' , allowNull: false, validate: {notNull: {msg: 'Filial do Funcionário deve ser preenchido2321!'}}}});
+    this.belongsTo(models.filial, {as: 'filial', foreignKey: {name: 'idfilial' , allowNull: false, validate: {notNull: {msg: 'Filial do Funcionário deve ser preenchido!'}}}});
   }
   
 }

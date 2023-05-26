@@ -6,20 +6,20 @@ class Filial extends Model {
 
     static init(sequelize){
         super.init({
-            NOME: {
+            nome: {
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: { msg: "Definir o Nome da Filial!" },
                     len: { args: [3, 30], msg: "O Nome da Filial deve ter entre 3 e 30 letras!" }
                 }
             },
-            LIMITE_DIARIO: {
+            limite_diario: {
                 type: DataTypes.INTEGER,
                 validate: {
                     notEmpty: { msg: "Definir o limite diario da Filial!" }
                 }
             },
-            RUA: {
+            rua: {
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: { msg: "Definir o nome da Rua da Filial!" },
@@ -27,7 +27,7 @@ class Filial extends Model {
 
                 }
             },
-            BAIRRO: {
+            bairro: {
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: { msg: "Definir o nome do Bairro da Filial!" },
@@ -35,7 +35,7 @@ class Filial extends Model {
 
                 }
             },
-            CIDADE: {
+            cidade: {
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: { msg: "Definir o nome da Cidade da Filial!" },
@@ -43,13 +43,13 @@ class Filial extends Model {
 
                 }
             },
-            NUMERO: {
+            numero: {
                 type: DataTypes.INTEGER,
                 validate: {
                     notEmpty: { msg: "Definir o Numero da Filial!" }
                 }
             },
-            CNPJ: {
+            cnpj: {
                 type: DataTypes.STRING,
                 validate: {
                     notEmpty: { msg: "Definir o CNPJ da Filial!" },
@@ -58,7 +58,7 @@ class Filial extends Model {
             }
 
 
-        } , { sequelize, modelName: 'FILIAL', tableName: 'FILIAL' })
+        } , { sequelize, modelName: 'filial', tableName: 'filiais' })
     }
 }
 

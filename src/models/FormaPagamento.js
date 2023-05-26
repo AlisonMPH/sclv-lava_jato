@@ -5,11 +5,11 @@ import { Model, DataTypes } from "sequelize";
 class FormaPagamento extends Model {
   static init(sequelize) {
     super.init({
-        FORMA_PAG: {
+        forma_pag: {
           type: DataTypes.STRING,
         }
         
-        }, { sequelize, modelName: "FORMA_PAGAMENTO", tableName: "FORMA_PAGAMENTO" });
+        }, { sequelize, modelName: "forma_pagamento", tableName: "forma_pagamentos" });
   
     }
 }

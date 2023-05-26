@@ -1,8 +1,6 @@
 import { Funcionario } from "../models/Funcionario.js";
 import { Filial } from "../models/Filial.js";
 
-import sequelize from '../config/database-inserts.js';
-
 class FuncionarioService {
 
   static async findAll() {
@@ -41,6 +39,7 @@ class FuncionarioService {
     await obj.destroy();
     return obj;
   }
+
 
 }
 

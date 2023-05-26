@@ -5,13 +5,12 @@ import { Model, DataTypes } from "sequelize";
 class Status extends Model {
   static init(sequelize) {
     super.init({
-        STATUS: {
+        status: {
           type: DataTypes.STRING,
         }
         
-        }, { sequelize, modelName: "STATUS", tableName: "STATUS" });
+        }, { sequelize, modelName: "status", tableName: "status" });
   
     }
 }
-
 export { Status };

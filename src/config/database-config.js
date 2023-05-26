@@ -4,7 +4,9 @@ export const dbConfig = {
   dialect: 'sqlite',
   storage: 'database.sqlite',
   define: {
-    freezeTableName: true
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true
   }
 };
 

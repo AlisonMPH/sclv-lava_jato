@@ -5,7 +5,7 @@ import { Model, DataTypes } from "sequelize";
 class TipoServico extends Model {
   static init(sequelize) {
     super.init({
-        NOME: {
+        nome: {
           type: DataTypes.STRING,
           validate: {
             notEmpty: { msg: "Nome do Serviço deve ser preenchido!" },
@@ -15,7 +15,7 @@ class TipoServico extends Model {
             }
           }
         },
-        PRECO: {
+        preco: {
           type: DataTypes.FLOAT,
           validate: {
             notEmpty: { msg: "Preco do Serviço deve ser preenchido!" },
@@ -25,16 +25,16 @@ class TipoServico extends Model {
             }
           }
         },
-        DESCRICAO: {
+        descricao: {
           type: DataTypes.STRING,
         },
-        TEMPO_MEDIO: {
+        tempo_medio: {
           type: DataTypes.INTEGER,
           validate: {
             notEmpty: { msg: "Tempo do Serviço deve ser preenchido!" }
           }
         }
-    }, { sequelize, modelName: "TIPO_SERVICO", tableName: "TIPO_SERVICO" });
+    }, { sequelize, modelName: "tipo_servico", tableName: "tipo_servicos" });
   }
 }
 
