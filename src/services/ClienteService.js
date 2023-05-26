@@ -49,6 +49,13 @@ class ClienteService {
         console.log(objs); 
         return objs;
       }
+
+    static async findClienteFuncionario(id) {
+        const { clienteId } = req.params;
+        const objs = await sequelize.query("SELECT * FROM CLIENTE C, FUNCIONARIO F WHERE C.CPF = F.CPF AND C.ID= :clienteId", { replacements: { clienteId: clienteId }, type: QueryTypes.SELECT });
+        if (objs != null)
+        return objs;
+    }
 }
 
 export { ClienteService };
