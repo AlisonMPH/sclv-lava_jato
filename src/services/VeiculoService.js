@@ -43,7 +43,8 @@ class VeiculoService {
 
     static async findCliente(req) {
         const cliente = req.CLIENTE
-        const objs = await sequelize.query(`SELECT veiculos.*  FROM veiculos WHERE idcliente = ${cliente}`, { type: QueryTypes.SELECT }); 
+        
+        const objs = await sequelize.query("SELECT veiculos.*  FROM veiculos WHERE idcliente = 1", { type: QueryTypes.SELECT }); 
         console.log(objs); 
         return objs;
       }
