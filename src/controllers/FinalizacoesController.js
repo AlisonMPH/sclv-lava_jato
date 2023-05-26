@@ -1,37 +1,37 @@
-import { FinalizacaoServicoService } from "../services/FinalizacaoServicoService.js";
+import { FinalizacoesService } from "../services/FinalizacoesService.js";
 
-class FinalizacaoServicoController {
+class FinalizacoesController {
   
   static async findAll(req, res, next) {
-    FinalizacaoServicoService.findAll()
+    FinalizacoesService.findAll()
         .then(objs => res.json(objs))
         .catch(next);
   }
 
   static async findByPk(req, res, next) {
-    FinalizacaoServicoService.findByPk(req)
+    FinalizacoesService.findByPk(req)
         .then(obj => res.json(obj))
         .catch(next);
   }
 
   static async create(req, res, next) {
-    FinalizacaoServicoService.create(req)
+    FinalizacoesService.create(req)
         .then(obj => res.json(obj))
         .catch(next);
   }
 
   static async update(req, res, next) {
-    FinalizacaoServicoService.update(req)
+    FinalizacoesService.update(req)
         .then(obj => res.json(obj))
         .catch(next);
   }
 
   static async delete(req, res, next) {
-    FinalizacaoServicoService.delete(req)
+    FinalizacoesService.delete(req)
         .then(obj => res.json(obj))
         .catch(next);
   }
 
 }
 
-export { FinalizacaoServicoController };
+export { FinalizacoesController };
