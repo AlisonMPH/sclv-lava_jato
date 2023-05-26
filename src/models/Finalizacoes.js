@@ -21,9 +21,15 @@ class Finalizacoes extends Model {
           validate: {
             
           }
+        },
+        valortotal: {
+          type: DataTypes.FLOAT,
+          validate: {
+            
+          }
         }
 
-    }, { sequelize, modelName: "Finalizacoes", tableName: "finalizacoes" });
+    }, { sequelize, modelName: "finalizacoes", tableName: "finalizacoes" });
   }
 
 static associate(models) {

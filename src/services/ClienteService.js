@@ -48,13 +48,30 @@ class ClienteService {
         const objs = await sequelize.query("SELECT clientes.*  FROM clientes WHERE is_devedor = true", { type: QueryTypes.SELECT }); 
         console.log(objs); 
         return objs;
-      }
+    }
 
-    static async findClienteFuncionario(id) {
+    static async findClienteFuncionario(req) {
         const { clienteId } = req.params;
-        const objs = await sequelize.query("SELECT * FROM CLIENTE C, FUNCIONARIO F WHERE C.CPF = F.CPF AND C.ID= :clienteId", { replacements: { clienteId: clienteId }, type: QueryTypes.SELECT });
-        if (objs != null)
-        return objs;
+        const objs = await sequelize.query(
+            "SELECT * FROM cliente C, funcionario F WHERE C.cpf = F.cpf AND C.id = :clienteId",
+            { replacements: { clienteId: clienteId }, type: QueryTypes.SELECT }
+        );
+
+        if (objs != null) {
+            return objs;
+        }
+    }
+
+    static async verificaTerceiraLavagem(req) {
+        const { cliente } = req.body;
+        const qtd_lavagem = await ClienteService.findByPk(cliente.id, { include: { all: true, nested: true } });
+        const qtdLavagem = qtd_lavagem.cliente.qtd_lavagem;
+
+        if (qtdLavagem % 3 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

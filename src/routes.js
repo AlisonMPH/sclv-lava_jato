@@ -6,6 +6,7 @@ import { TipoServicoController } from "./controllers/TipoServicoController.js";
 import { ClienteController } from "./controllers/ClienteController.js";
 import { VeiculoController } from "./controllers/VeiculoController.js";
 import { AgendamentoController } from "./controllers/AgendamentoController.js";
+import { FinalizacoesController } from "./controllers/FinalizacoesController.js";
 
 const routes = express.Router();
 
@@ -44,5 +45,11 @@ routes.get('/agendamento/:id', AgendamentoController.findByPk);
 routes.post('/agendamento', AgendamentoController.create);
 routes.put('/agendamento/:id', AgendamentoController.update);
 routes.delete('/agendamento/:id', AgendamentoController.delete);
+
+routes.get('/finalizacoes', FinalizacoesController.findAll);
+routes.get('/finalizacoes/:id', FinalizacoesController.findByPk);
+routes.post('/finalizacoes', FinalizacoesController.create);
+routes.put('/finalizacoes/:id', FinalizacoesController.update);
+routes.delete('/finalizacoes/:id', FinalizacoesController.delete);
 
 export default routes;
