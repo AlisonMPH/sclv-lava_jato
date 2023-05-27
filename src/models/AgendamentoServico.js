@@ -1,6 +1,6 @@
 //CAMILA
 
-import { Model, DataTypes } from "sequelize";
+import { Model, DataTypes, Sequelize } from "sequelize";
 
 class AgendamentoServico extends Model {
   static init(sequelize) {

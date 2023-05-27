@@ -1,4 +1,6 @@
 import { Veiculo } from "../models/Veiculo.js";
+import sequelize from '../config/database-inserts.js';
+import { QueryTypes } from 'sequelize';
 
 class VeiculoService {
     static async findAll() {
@@ -42,13 +44,20 @@ class VeiculoService {
     }
 
     static async findCliente(req) {
-        const cliente = req.CLIENTE
+        const { idveiculo } = req.body
 
+        const veiculos = await sequelize.query("SELECT veiculos.*  FROM veiculos WHERE id = :idveiculo", { replacements: { idveiculo: idveiculo }, type: QueryTypes.SELECT }); 
+
+        // console.log(veiculos)
+        const idcliente = veiculos[0].idcliente
+
+        // console.log(veiculos[0].idcliente)
+
+        const clientes = await sequelize.query("SELECT clientes.*  FROM clientes WHERE id = :idcliente", { replacements: { idcliente: idcliente }, type: QueryTypes.SELECT }); 
+            
         
-
-        const objs = await sequelize.query("SELECT veiculos.*  FROM veiculos WHERE idcliente = 1", { type: QueryTypes.SELECT }); 
-        console.log(objs); 
-        return objs;
+        // console.log(clientes); 
+        return clientes;
       }
 }
 

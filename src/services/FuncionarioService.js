@@ -1,5 +1,8 @@
 import { Funcionario } from "../models/Funcionario.js";
 import { Filial } from "../models/Filial.js";
+import sequelize from '../config/database-inserts.js';
+import { QueryTypes } from 'sequelize';
+
 
 class FuncionarioService {
 
@@ -38,6 +41,13 @@ class FuncionarioService {
     if (obj == null) throw 'Funcionário não encontrado!';
     await obj.destroy();
     return obj;
+  }
+
+  static async findFuncionario(req) {
+    const { idfuncionario } = req.body
+    const funcionario = await sequelize.query("SELECT funcionarios.*  FROM funcionarios WHERE id = :idfuncionario", { replacements: { idfuncionario: idfuncionario }, type: QueryTypes.SELECT });
+
+    return funcionario;
   }
 
 
