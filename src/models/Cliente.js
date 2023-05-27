@@ -61,7 +61,6 @@ class Cliente extends Model {
         validate: {
             notEmpty: { msg: "Definir o nome da Cidade do Cliente!" },
             len: { args: [3, 30], msg: "A Cidade do Cliente deve ter entre 3 e 30 letras!" }
-
         }
     },
       bairro: {
@@ -69,7 +68,6 @@ class Cliente extends Model {
         validate: {
             notEmpty: { msg: "Definir o nome do Bairro do Cliente!" },
             len: { args: [3, 30], msg: "O Bairro do Cliente deve ter entre 3 e 30 letras!" }
-
         }
     },
     data_nascimento: { 

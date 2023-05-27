@@ -2,13 +2,16 @@ import { Funcionario } from "../models/funcionario.js";
 import { Veiculo } from "../models/veiculo.js";
 import { TipoServico } from "../models/TipoServico.js";
 import { AgendamentoServico } from "../models/AgendamentoServico.js";
-import { ClienteService}  from "./ClienteService.js";
+import { ClienteService } from "./ClienteService.js";
+import { VeiculoService } from "./VeiculoService.js";
 import sequelize from '../config/database-inserts.js';
+import { Status } from "../models/Status.js";
+import { QueryTypes } from 'sequelize';
+import { FuncionarioService } from "./FuncionarioService.js";
 
 class AgendamentoService {
     static async findAll() {
         const objs = await AgendamentoServico.findAll({ include: { all: true, nested: true } });
-        // console.log(objs[0].veiculo.CLIENTE.IS_DEVEDOR)
         return objs;
 
     }
@@ -22,54 +25,85 @@ class AgendamentoService {
     static async create(req) {
         const { data_entrada, observacoes_entrada, funcionario, veiculo, tipo_servico } = req.body;
 
-        // this.validaRegras(req)
-        // console.log(veiculo.CLIENTE)
-
-        // if (await this.verificarRegrasDeNegocio(req)) {
-            // const t = await sequelize.transaction();
-            const obj = await AgendamentoServico.create({ data_entrada, observacoes_entrada, idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id });
-            this.validaRegras(req)
-            return await AgendamentoServico.findByPk(obj.id, { include: { all: true, nested: true } });
-            
+        if (await this.validaRegras(req)) {
+            const t = await sequelize.transaction();
+            const obj = await AgendamentoServico.create({ data_entrada, observacoes_entrada, idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id }, { transaction: t });
             try {
-                await Promise.all(itens.map(item => obj.createItem({ valor: item.valor, entrega: item.entrega, emprestimoId: obj.id, fitaId: item.fita.id }, { transaction: t })));
-                await Promise.all(itens.map(async item => (await Fita.findByPk(item.fita.id)).update({ disponivel: 0 }, { transaction: t })));
+                await Status.create({ status: "AGENDADO", idagendamento: obj.id }, { transaction: t }) // Adiciona status inical para o agendamento
                 await t.commit();
-                return await Emprestimo.findByPk(obj.id, { include: { all: true, nested: true } });
+                return await AgendamentoServico.findByPk(obj.id, { include: { all: true, nested: true } });
             } catch (error) {
                 await t.rollback();
+                throw "Ocorreu um erro ao realizar o agendamento.";
             }
-        // }
+        }
 
     }
 
-    static async update() {
+    static async update(req) {
+        const { id } = req.params;
+        const { data_entrada, observacoes_entrada, funcionario, veiculo, tipo_servico } = req.body;
+
+        if (await this.canUpdate(req)) {
+            const obj = await AgendamentoServico.findByPk(id, { include: { all: true, nested: true } });
+            if (obj == null) throw 'Agendamento não encontrado!';
+            const t = await sequelize.transaction();
+            Object.assign(obj, { data_entrada, observacoes_entrada, idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id });
+            await obj.save({ transaction: t }); // Salvando os dados simples do objeto agendamento
+            try {
+                await t.commit();
+                return await AgendamentoServico.findByPk(obj.id, { include: { all: true, nested: true } });
+            } catch (error) {
+                await t.rollback();
+                throw "Pelo menos uma das fitas informadas não foi encontrada!";
+            }
+        }
 
     }
 
-    static async delete() {
-
+    static async delete(req) {
+        const { id } = req.params;
+        const obj = await AgendamentoServico.findByPk(id);
+        if (obj == null) throw 'Agendamento não encontrado!';
+        try {
+            await obj.destroy();
+            return obj;
+        } catch (error) {
+            throw "Não é possível remover o agendamento!";
+        }
     }
 
-    // 1 - Se o cliente é devedor do lava jato, não poderá realizar o agendamento.
+    // Regra de Negócio 1 - Se o cliente é devedor do lava jato, não poderá realizar o agendamento.
+    // Regra de Negócio 2 - Funcionário não pode agendar o serviço para ele mesmo.
+    // Regra de Negócio 3 - Se o serviço já foi iniciado, o cliente não pode alterar o agendamento.
+
     static async validaRegras(req) {
         const { data_entrada, observacoes_entrada, funcionario, veiculo, tipo_servico } = req.body;
-        
-        const devedores = await ClienteService.findDevedores();
-        console.log(devedores); 
-        console.log(veiculo);
+        const cliente = await VeiculoService.findCliente(req) // Busca o cliente atraves do veiculo
+        const func = await FuncionarioService.findFuncionario(req) // Busca o funcionário através do id
 
-        const clienteDono = await VeiculoService.findCliente();
+        if (cliente[0].is_devedor) { // Valida se o cliente é devedor
+            throw 'Agendamento não pode ser realizado. Cliente possui débito a ser pago.'
+        }
 
-        let clienteDevedor = false;
-        for (let devedor of devedores) {
-            if (devedor.id == veiculo.cliente.id) {
-                clienteDevedor = true;
-            }
+        if (cliente[0].cpf === func[0].cpf) { // Valida se o funcionário que irá realizar o serviço é diferente do cliente que está solicitando.
+            throw "Cliente não pode realizar o serviço para ele mesmo."
         }
-        if (clienteDevedor) {
-            throw "Este cliente não pode realizar o agendamento";
+
+        return true
+    }
+
+    // Regra de Negócio 3 - Se o serviço já foi iniciado, o cliente não pode alterar o agendamento.
+    static async canUpdate(req) {
+        const { id } = req.params
+
+        const status = await sequelize.query("SELECT status.*  FROM status WHERE id = :idagendamento", { replacements: { idagendamento: id }, type: QueryTypes.SELECT });
+
+        if (status[0].status !== "AGENDADO") { // Valida se o status do agendamento permite a alteração.
+            throw "Não é possível alterar esse agendamento.";
         }
+
+        return true;
     }
 
 }

@@ -20,13 +20,13 @@ class AgendamentoController {
   }
 
   static async update(req, res, next) {
-    AgendamentoService.findByPk(req)
+    AgendamentoService.update(req)
       .then(obj => res.json(obj))
       .catch(next);
   }
 
   static async delete(req, res, next) {
-    AgendamentoService.findByPk(req)
+    AgendamentoService.delete(req)
       .then(obj => res.json(obj))
       .catch(next);
   }
