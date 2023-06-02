@@ -52,4 +52,5 @@ routes.post('/finalizacoes', FinalizacoesController.create);
 routes.put('/finalizacoes/:id', FinalizacoesController.update);
 routes.delete('/finalizacoes/:id', FinalizacoesController.delete);
 
+
 export default routes;

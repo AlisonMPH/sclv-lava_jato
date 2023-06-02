@@ -15,19 +15,19 @@ class ClienteService {
     }
 
     static async create(req) {
-        const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO } = req.body;
-        if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
-        const obj = await Cliente.create({ NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO });
+        const { nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento } = req.body;
+        if (bairro == null) throw 'O bairro do Cliente deve ser preenchido!';
+        const obj = await Cliente.create({ nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento });
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO } = req.body;
-        if (BAIRRO == null) throw 'O Bairro do Cliente deve ser preenchido!';
+        const { nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento } = req.body;
+        if (bairro == null) throw 'O bairro do Cliente deve ser preenchido!';
         const obj = await Cliente.findByPk(id, { include: { all: true, nested: true } });
         if (obj == null) throw 'Cliente não encontrado!';
-        Object.assign(obj, { NOME, CPF, TELEFONE, EMAIL, SENHA, RUA, NUMERO, CIDADE, BAIRRO, DATA_NASCIMENTO });
+        Object.assign(obj, { nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento });
         await obj.save();
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
@@ -49,8 +49,8 @@ class ClienteService {
         console.log(objs); 
         return objs;
     }
-
-    static async findClienteFuncionario(req) {
+     
+      static async findClienteFuncionario(id) {
         const { clienteId } = req.params;
         const objs = await sequelize.query(
             "SELECT * FROM cliente C, funcionario F WHERE C.cpf = F.cpf AND C.id = :clienteId",
