@@ -45,11 +45,17 @@ routes.get('/agendamento/:id', AgendamentoController.findByPk);
 routes.post('/agendamento', AgendamentoController.create);
 routes.put('/agendamento/:id', AgendamentoController.update);
 routes.delete('/agendamento/:id', AgendamentoController.delete);
+// ROTAS DOS RELATÓRIOS DE AGENDAMENTO
+routes.get('/agendamento/:inicio/:termino/:placa', AgendamentoController.relatorioDeAgendamentoPorVeiculo);
+routes.get('/agendamento/:inicio/:termino', AgendamentoController.relatorioDeAgendamentoPorCliente);
 
 routes.get('/finalizacao', FinalizacoesController.findAll);
 routes.get('/finalizacao/:id', FinalizacoesController.findByPk);
 routes.post('/finalizacao', FinalizacoesController.create);
 routes.put('/finalizacao/:id', FinalizacoesController.update);
 routes.delete('/finalizacao/:id', FinalizacoesController.delete);
+// ROTAS DOS RELATÓRIOS DE RECEITAS
+routes.get('/finalizacao/:inicio/:termino/:nome', FinalizacoesController.relatorioDeReceitaPorFilial);
+routes.get('/finalizacao/:inicio/:termino', FinalizacoesController.relatorioDeReceitaTotal);
 
 export default routes;
