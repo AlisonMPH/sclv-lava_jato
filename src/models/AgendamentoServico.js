@@ -15,6 +15,10 @@ class AgendamentoServico extends Model {
           validate: {
             
           }
+        },
+        status: {
+          type: Sequelize.ENUM("AGENDADO", "EM ANDAMENTO", "FINALIZADO"),
+          defaultValue: "AGENDADO"
         }
 
     }, { sequelize, modelName: "agendamento", tableName: "agendamentos" });

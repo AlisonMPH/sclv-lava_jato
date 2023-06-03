@@ -32,6 +32,18 @@ class FinalizacoesController {
         .catch(next);
   }
 
+  static async relatorioDeReceitaPorFilial(req, res, next) {
+    FinalizacoesService.relatorioDeReceitaPorFilial(req)
+        .then(objs => res.json(objs))
+        .catch(next);
+  }
+
+  static async relatorioDeReceitaTotal(req, res, next) {
+    FinalizacoesService.relatorioDeReceitaTotal(req)
+        .then(objs => res.json(objs))
+        .catch(next);
+  }
+
 }
 
 export { FinalizacoesController };

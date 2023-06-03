@@ -1,6 +1,6 @@
 //ALISON
 
-import { Model, DataTypes, Sequelize } from "sequelize";
+import { Model, Sequelize } from "sequelize";
 
 class Status extends Model {
   static init(sequelize) {
@@ -14,9 +14,9 @@ class Status extends Model {
 
   }
 
-  static associate(models) {
-    this.belongsTo(models.agendamento, { as: 'agendamento', foreignKey: { name: 'idagendamento' } });
-    this.belongsTo(models.finalizacao, { as: 'finalizacao', foreignKey: { name: 'idfinalizacao' } });
-  }
+  // static associate(models) {
+  //   this.belongsTo(models.agendamento, { as: 'agendamento', foreignKey: { name: 'idagendamento' } });
+  //   this.belongsTo(models.finalizacao, { as: 'finalizacao', foreignKey: { name: 'idfinalizacao' } });
+  // }
 }
 export { Status };

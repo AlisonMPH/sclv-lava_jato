@@ -29,7 +29,7 @@ Veiculo.associate(sequelize.models);
 AgendamentoServico.associate(sequelize.models);
 Finalizacoes.associate(sequelize.models);
 
-// databaseInserts(); // comentar quando estiver em ambiente de produção (não criar tabelas e não inserir registros de teste)
+//databaseInserts(); // comentar quando estiver em ambiente de produção (não criar tabelas e não inserir registros de teste)
 
 function databaseInserts() {
   (async () => {
@@ -294,6 +294,14 @@ function databaseInserts() {
       idfuncionario: 1,
       idveiculo: 2,
       idtipo_servico: 1
+    });
+
+    const formaPagamentoCartao = FormaPagamento.create({
+      forma_pag: "Cartão"
+    });
+
+    const formaPagamentoPix = FormaPagamento.create({
+      forma_pag: "Pix"
     });
 
 

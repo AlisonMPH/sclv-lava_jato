@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "485af70d-f615-455a-8089-1abe6f7cfc7b",
+		"_postman_id": "dc650a21-5a34-462f-ad70-3859c4c6e9e3",
 		"name": "SCLV_Lava Java (Alison e Camila)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16851770"
+		"_exporter_id": "15149408"
 	},
 	"item": [
 		{
@@ -1970,7 +1970,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data_entrada\":\"2023-06-22\",\n    \"observacoes_entrada\":\"Farol com defeito\",\n    \"idtipo_servico\": \"2\",\n    \"tipo_servico\": {\n        \"id\": 2\n    },\n    \"idfuncionario\":\"1\",\n        \"funcionario\": {\n        \"id\": 1\n    },\n    \"idveiculo\": 4,\n    \"veiculo\": {\n        \"id\": 4\n    }\n}",
+							"raw": "{\n    \"data_entrada\":\"2023-06-22\",\n    \"observacoes_entrada\":\"Teste de agendamento\",\n    \"idtipo_servico\": \"3\",\n    \"tipo_servico\": {\n        \"id\": 3\n    },\n    \"idfuncionario\":\"3\",\n        \"funcionario\": {\n        \"id\": 3\n    },\n    \"idveiculo\": 2,\n    \"veiculo\": {\n        \"id\": 2\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2521,6 +2521,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data_saida\":\"2023-06-22\",\r\n    \"observacoes_saida\":\"Teste de finalização\",\r\n    \"conf_pag\": true,\r\n    \"id_agendamento\": \"7\",\r\n    \"agendamento\": {\r\n        \"id\": 7\r\n    },\r\n    \"id_forma_pagamento\":\"1\",\r\n        \"forma_pagamento\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:3333/finalizacao",
 							"protocol": "http",
@@ -2536,10 +2545,19 @@
 					"response": []
 				},
 				{
-					"name": "Delete",
+					"name": "Update",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data_saida\":\"2023-06-22\",\r\n    \"observacoes_saida\":\"Teste de finalização\",\r\n    \"conf_pag\": 1,\r\n    \"id_agendamento\": \"3\",\r\n    \"agendamento\": {\r\n        \"id\": 3\r\n    },\r\n    \"id_forma_pagamento\":\"1\",\r\n        \"forma_pagamento\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:3333/finalizacao/2",
 							"protocol": "http",
@@ -2554,6 +2572,343 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/finalizacao/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"finalizacao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relatórios",
+			"item": [
+				{
+					"name": "Agendamento por veículo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/agendamento/2023-04-02/2023-08-02/JKL-2345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"agendamento",
+								"2023-04-02",
+								"2023-08-02",
+								"JKL-2345"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200 OK] Relatório Agendamento por Veículo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/agendamento/2023-04-02/2023-08-02/JKL-2345",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"agendamento",
+										"2023-04-02",
+										"2023-08-02",
+										"JKL-2345"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "496"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f0-TRS75Ex5Ur3+HbDdhFMB/qzUsLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jun 2023 00:26:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"tipo_servico_id\": 2,\n        \"tipo_servico_nome\": \"Lavagem Completa\",\n        \"valor_total\": 60,\n        \"quantidade\": 1,\n        \"status\": \"AGENDADO\"\n    },\n    {\n        \"id\": 4,\n        \"tipo_servico_id\": 1,\n        \"tipo_servico_nome\": \"Lavagem Simples\",\n        \"valor_total\": 30,\n        \"quantidade\": 2,\n        \"status\": \"AGENDADO\"\n    },\n    {\n        \"id\": 5,\n        \"tipo_servico_id\": 3,\n        \"tipo_servico_nome\": \"Limpeza Interna Nível 1\",\n        \"valor_total\": 50,\n        \"quantidade\": 3,\n        \"status\": \"AGENDADO\"\n    },\n    {\n        \"id\": 9,\n        \"tipo_servico_id\": 4,\n        \"tipo_servico_nome\": \"Limpeza Interna Nível 2\",\n        \"valor_total\": 80,\n        \"quantidade\": 3,\n        \"status\": \"AGENDADO\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Agendamento por Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/agendamento/2023-04-02/2023-06-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"agendamento",
+								"2023-04-02",
+								"2023-06-31"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200 OK] Relatório Agendamento agrupado por Cliente",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/agendamento/2023-04-02/2023-06-03",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"agendamento",
+										"2023-04-02",
+										"2023-06-03"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2-WxfJpTJDtYtXgjzfDrt8BhxrCNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jun 2023 00:27:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Nome\": \"Camila Silva\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 30\n    },\n    {\n        \"Nome\": \"Lucas Santos\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 510\n    },\n    {\n        \"Nome\": \"Paulo Oliveira\",\n        \"Total_Agendamentos\": 1,\n        \"Total\": 30\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Receita por filial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31/Filial A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"finalizacao",
+								"2023-04-02",
+								"2023-06-31",
+								"Filial A"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200 OK] Relatório Receita por Filial",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-03/FilialA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"finalizacao",
+										"2023-04-02",
+										"2023-06-03",
+										"FilialA"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-7nNNm4z13qtSJ9m2avy/vO5cu78\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jun 2023 00:19:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"tipo_servico_id\": 1,\n        \"tipo_servico_nome\": \"Lavagem Simples\",\n        \"receita\": 30\n    },\n    {\n        \"tipo_servico_id\": 3,\n        \"tipo_servico_nome\": \"Limpeza Interna Nível 1\",\n        \"receita\": 100\n    },\n    {\n        \"tipo_servico_id\": 4,\n        \"tipo_servico_nome\": \"Limpeza Interna Nível 2\",\n        \"receita\": 240\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Receita total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"finalizacao",
+								"2023-04-02",
+								"2023-06-31"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200 OK] Relatório Receita Total",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"finalizacao",
+										"2023-04-02",
+										"2023-06-31"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a5-AgPIm2dnWFuWdFzBYghb8x+fqPY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jun 2023 00:20:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome_filial\": \"Filial A\",\n        \"quantidade_agendamentos\": 3,\n        \"valor_total_servicos\": 140\n    },\n    {\n        \"nome_filial\": \"Filial B\",\n        \"quantidade_agendamentos\": 6,\n        \"valor_total_servicos\": 370\n    }\n]"
+						}
+					]
 				}
 			]
 		}

@@ -30,6 +30,18 @@ class AgendamentoController {
       .then(obj => res.json(obj))
       .catch(next);
   }
+
+  static async relatorioDeAgendamentoPorVeiculo(req, res, next) {
+    AgendamentoService.relatorioDeAgendamentoPorVeiculo(req)
+        .then(objs => res.json(objs))
+        .catch(next);
+  }
+
+  static async relatorioDeAgendamentoPorCliente(req, res, next) {
+    AgendamentoService.relatorioDeAgendamentoPorCliente(req)
+        .then(objs => res.json(objs))
+        .catch(next);
+  }
 }
 
 export { AgendamentoController }; 
