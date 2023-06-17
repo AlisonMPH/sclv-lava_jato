@@ -1,10 +1,5 @@
 //Camila
-
-import { Funcionario } from "../models/funcionario.js";
-import { Veiculo } from "../models/veiculo.js";
-import { TipoServico } from "../models/TipoServico.js";
 import { AgendamentoServico } from "../models/AgendamentoServico.js";
-import { ClienteService } from "./ClienteService.js";
 import { VeiculoService } from "./VeiculoService.js";
 import sequelize from '../config/database-inserts.js';
 import { Status } from "../models/Status.js";
