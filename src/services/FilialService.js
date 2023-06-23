@@ -14,17 +14,17 @@ class FilialService {
   }
 
   static async create(req) {
-    const { NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ } = req.body;
-    const obj = await Filial.create({ NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ});
+    const { nome, limite_diario, rua, bairro, cidade, numero, cnpj } = req.body;
+    const obj = await Filial.create({ nome, limite_diario, rua, bairro, cidade, numero, cnpj});
     return await Filial.findByPk(obj.id, { include: { all: true, nested: true }});
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ } = req.body;
+    const { nome, limite_diario, rua, bairro, cidade, numero, cnpj } = req.body;
     const obj = await Filial.findByPk(id, { include: { all: true, nested: true }});
     if (obj == null) throw 'Filial não encontrada!';
-    Object.assign(obj, { NOME, LIMITE_DIARIO, RUA, BAIRRO, CIDADE, NUMERO, CNPJ });
+    Object.assign(obj, { nome, limite_diario, rua, bairro, cidade, numero, cnpj });
     await obj.save();
     return await Filial.findByPk(id, { include: { all: true, nested: true }});
   }
