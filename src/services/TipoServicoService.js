@@ -14,17 +14,17 @@ class TipoServicoService {
   }
 
   static async create(req) {
-    const { NOME, PRECO, DESCRICAO, TEMPO_MEDIO } = req.body;
-    const obj = await TipoServico.create({ NOME, PRECO, DESCRICAO, TEMPO_MEDIO });
+    const { nome, preco, descricao, tempo_medio } = req.body;
+    const obj = await TipoServico.create({ nome, preco, descricao, tempo_medio });
     return await TipoServico.findByPk(obj.id, { include: { all: true, nested: true }});
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { NOME, PRECO, DESCRICAO, TEMPO_MEDIO } = req.body;
+    const { nome, preco, descricao, tempo_medio } = req.body;
     const obj = await TipoServico.findByPk(id, { include: { all: true, nested: true }});
     if (obj == null) throw 'TipoServico não encontrado!';
-    Object.assign(obj, { NOME, PRECO, DESCRICAO, TEMPO_MEDIO });
+    Object.assign(obj, { nome, preco, descricao, tempo_medio });
     await obj.save();
     return await TipoServico.findByPk(id, { include: { all: true, nested: true }});
   }
