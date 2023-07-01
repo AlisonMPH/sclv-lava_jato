@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "db583370-4f09-44ea-a7d4-7a730a804580",
-		"name": "SCLV_Lava Java (Alison e Camila) Copy",
-		"description": "### Sistema de Controle de Lava Jato.\n\nProd: [https://sclv-lava-jato.onrender.com](https://desktop.postman.com/?desktopVersion=10.14.2&userId=15149408&teamId=0)\n\nLocalhost: [{{base_url}}](https://desktop.postman.com/?desktopVersion=10.14.2&userId=15149408&teamId=0)",
+		"_postman_id": "9b92e4cc-8817-431e-90b4-327ffc8cac80",
+		"name": "SCLV_Lava Java (Alison e Camila)",
+		"description": "## Sistema de Controle de Lava Jato.\n\nProd: [https://sclv-lava-jato.onrender.com](https://desktop.postman.com/?desktopVersion=10.14.2&userId=15149408&teamId=0)\n\nLocalhost: http://localhost:3333\n\nStartFragmentEndFragment\n\n## **Importando Variavéis:**\n\nPasso 1: Clique na aba **Environments**\n\n<img src=\"https://content.pstmn.io/1744b076-c3b1-4a03-95a2-9134fd7c363b/aW1hZ2UucG5n\" width=\"409\" height=\"408\">\n\nPasso 2:\n\nClique na aba Import e selecione os dois arquivos que possui a extensão `.environment`\n\n<img src=\"https://content.pstmn.io/36705828-88e7-4883-a478-220a0cb07914/aW1hZ2UucG5n\" width=\"789\" height=\"445\">\n\nPasso 3:\n\nPor fim, aparecerá a seguinte tela. Clique em **Import**\n\n<img src=\"https://content.pstmn.io/c49e908a-bbb0-4906-ab4b-b279ef20bc22/aW1hZ2UucG5n\" width=\"822\" height=\"420\">\n\nAssim você terá as variavéis de **PROD** e **LOCAL** no seu postaman para utilizar na collection SCLV_Lava Jato.\n\nPara utilizar as environment, basta selecionar a que deseja no canto superior direito do postman\n\n<img src=\"https://content.pstmn.io/66d1c0c2-f35c-4578-b07c-0d8e7a1a3c18/aW1hZ2UucG5n\" width=\"301\" height=\"213\">",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15149408"
 	},
