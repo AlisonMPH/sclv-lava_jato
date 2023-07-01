@@ -76,7 +76,7 @@ class AgendamentoService {
 
     static async validaRegras(req) {
         const { data_entrada, observacoes_entrada, funcionario, veiculo, tipo_servico } = req.body;
-        const cliente = await VeiculoService.findCliente(req) // Busca o cliente atraves do veiculo
+        const cliente = await VeiculoService.findcliente(req) // Busca o cliente atraves do veiculo
         const func = await FuncionarioService.findFuncionario(req) // Busca o funcionário através do id
 
         if (cliente[0].is_devedor) { // Valida se o cliente é devedor
@@ -94,7 +94,7 @@ class AgendamentoService {
     static async canUpdate(req) {
         const { id } = req.params
 
-        const status = await sequelize.query("SELECT status.*  FROM status WHERE id = :idagendamento", { replacements: { idagendamento: id }, type: QueryTypes.SELECT });
+        const status = await sequelize.query("SELECT agendamentos.status  FROM agendamentos WHERE id = :idagendamento", { replacements: { idagendamento: id }, type: QueryTypes.SELECT });
 
         if (status[0].status !== "AGENDADO") { // Valida se o status do agendamento permite a alteração.
             throw "Não é possível alterar esse agendamento.";

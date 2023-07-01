@@ -34,7 +34,7 @@ Finalizacoes.associate(sequelize.models);
 function databaseInserts() {
   (async () => {
     await sequelize.sync();
-
+   /*
     //CLIENTE
     const cliente1 = await Cliente.create({
       nome: "Camila Silva",
@@ -303,7 +303,7 @@ function databaseInserts() {
     const formaPagamentoPix = FormaPagamento.create({
       forma_pag: "Pix"
     });
-
+    */
 
   })();
 }

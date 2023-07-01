@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "dc650a21-5a34-462f-ad70-3859c4c6e9e3",
-		"name": "SCLV_Lava Java (Alison e Camila)",
+		"_postman_id": "db583370-4f09-44ea-a7d4-7a730a804580",
+		"name": "SCLV_Lava Java (Alison e Camila) Copy",
+		"description": "### Sistema de Controle de Lava Jato.\n\nProd: [https://sclv-lava-jato.onrender.com](https://desktop.postman.com/?desktopVersion=10.14.2&userId=15149408&teamId=0)\n\nLocalhost: [{{base_url}}](https://desktop.postman.com/?desktopVersion=10.14.2&userId=15149408&teamId=0)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15149408"
 	},
@@ -15,12 +16,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/cliente",
-							"protocol": "http",
+							"raw": "{{base_url}}/cliente",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"cliente"
 							]
@@ -33,12 +32,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/cliente",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente"
 									]
@@ -78,7 +75,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"NOME\": \"Camila Silva\",\n        \"CPF\": \"123.456.789-00\",\n        \"TELEFONE\": \"(11) 1111-1111\",\n        \"EMAIL\": \"camila.silva@gmail.com\",\n        \"QTD_LAVAGEM\": 0,\n        \"SENHA\": \"senha13\",\n        \"RUA\": \"Rua dos Flores\",\n        \"NUMERO\": 100,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Vila Olímpia\",\n        \"DATA_NASCIMENTO\": \"1995-02-10\",\n        \"createdAt\": \"2023-05-06T00:59:03.048Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.048Z\"\n    },\n    {\n        \"id\": 2,\n        \"NOME\": \"Paulo Oliveira\",\n        \"CPF\": \"987.654.321-00\",\n        \"TELEFONE\": \"(11) 2222-2222\",\n        \"EMAIL\": \"paulo.oliveira@gmail.com\",\n        \"QTD_LAVAGEM\": 2,\n        \"SENHA\": \"senha1\",\n        \"RUA\": \"Rua das Palmeiras\",\n        \"NUMERO\": 200,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Moema\",\n        \"DATA_NASCIMENTO\": \"1987-05-20\",\n        \"createdAt\": \"2023-05-06T00:59:03.062Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.062Z\"\n    },\n    {\n        \"id\": 3,\n        \"NOME\": \"Ana Souza\",\n        \"CPF\": \"789.123.456-00\",\n        \"TELEFONE\": \"(11) 3333-3333\",\n        \"EMAIL\": \"ana.souza@gmail.com\",\n        \"QTD_LAVAGEM\": 5,\n        \"SENHA\": \"senha1\",\n        \"RUA\": \"Rua dos Pinheiros\",\n        \"NUMERO\": 300,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Pinheiros\",\n        \"DATA_NASCIMENTO\": \"1990-11-15\",\n        \"createdAt\": \"2023-05-06T00:59:03.068Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.068Z\"\n    },\n    {\n        \"id\": 4,\n        \"NOME\": \"Lucas Santos\",\n        \"CPF\": \"456.789.123-00\",\n        \"TELEFONE\": \"(11) 4444-4444\",\n        \"EMAIL\": \"lucas.santos@gmail.com\",\n        \"QTD_LAVAGEM\": 1,\n        \"SENHA\": \"123456\",\n        \"RUA\": \"Rua das Amendoeiras\",\n        \"NUMERO\": 400,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Morumbi\",\n        \"DATA_NASCIMENTO\": \"1985-07-25\",\n        \"createdAt\": \"2023-05-06T00:59:03.074Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.074Z\"\n    },\n    {\n        \"id\": 5,\n        \"NOME\": \"Juliana Almeida\",\n        \"CPF\": \"654.321.987-00\",\n        \"TELEFONE\": \"(11) 5555-5555\",\n        \"EMAIL\": \"juliana.almeida@gmail.com\",\n        \"QTD_LAVAGEM\": 3,\n        \"SENHA\": \"senh567\",\n        \"RUA\": \"Rua das Azaleias\",\n        \"NUMERO\": 500,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Jardins\",\n        \"DATA_NASCIMENTO\": \"1992-03-02\",\n        \"createdAt\": \"2023-05-06T00:59:03.080Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.080Z\"\n    }\n]"
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Camila Silva\",\n        \"cpf\": \"123.456.789-00\",\n        \"telefone\": \"(11) 1111-1111\",\n        \"email\": \"camila.silva@gmail.com\",\n        \"qtd_lavagem\": 0,\n        \"senha\": \"senha13\",\n        \"rua\": \"rua dos Flores\",\n        \"numero\": 100,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Vila Olímpia\",\n        \"data_nascimento\": \"1995-02-10\",\n        \"createdAt\": \"2023-05-06T00:59:03.048Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.048Z\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Paulo Oliveira\",\n        \"cpf\": \"987.654.321-00\",\n        \"telefone\": \"(11) 2222-2222\",\n        \"email\": \"paulo.oliveira@gmail.com\",\n        \"qtd_lavagem\": 2,\n        \"senha\": \"senha1\",\n        \"rua\": \"rua das Palmeiras\",\n        \"numero\": 200,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Moema\",\n        \"data_nascimento\": \"1987-05-20\",\n        \"createdAt\": \"2023-05-06T00:59:03.062Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.062Z\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Ana Souza\",\n        \"cpf\": \"789.123.456-00\",\n        \"telefone\": \"(11) 3333-3333\",\n        \"email\": \"ana.souza@gmail.com\",\n        \"qtd_lavagem\": 5,\n        \"senha\": \"senha1\",\n        \"rua\": \"rua dos Pinheiros\",\n        \"numero\": 300,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Pinheiros\",\n        \"data_nascimento\": \"1990-11-15\",\n        \"createdAt\": \"2023-05-06T00:59:03.068Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.068Z\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Lucas Santos\",\n        \"cpf\": \"456.789.123-00\",\n        \"telefone\": \"(11) 4444-4444\",\n        \"email\": \"lucas.santos@gmail.com\",\n        \"qtd_lavagem\": 1,\n        \"senha\": \"123456\",\n        \"rua\": \"rua das Amendoeiras\",\n        \"numero\": 400,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Morumbi\",\n        \"data_nascimento\": \"1985-07-25\",\n        \"createdAt\": \"2023-05-06T00:59:03.074Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.074Z\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Juliana Almeida\",\n        \"cpf\": \"654.321.987-00\",\n        \"telefone\": \"(11) 5555-5555\",\n        \"email\": \"juliana.almeida@gmail.com\",\n        \"qtd_lavagem\": 3,\n        \"senha\": \"senh567\",\n        \"rua\": \"rua das Azaleias\",\n        \"numero\": 500,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Jardins\",\n        \"data_nascimento\": \"1992-03-02\",\n        \"createdAt\": \"2023-05-06T00:59:03.080Z\",\n        \"updatedAt\": \"2023-05-06T00:59:03.080Z\"\n    }\n]"
 						}
 					]
 				},
@@ -88,12 +85,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/cliente/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/cliente/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"cliente",
 								"1"
@@ -107,12 +102,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/cliente/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente/1",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente",
 										"1"
@@ -153,7 +146,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"NOME\": \"Camila Silva\",\n    \"CPF\": \"123.456.789-00\",\n    \"TELEFONE\": \"(11) 1111-1111\",\n    \"EMAIL\": \"camila.silva@gmail.com\",\n    \"QTD_LAVAGEM\": 0,\n    \"SENHA\": \"senha13\",\n    \"RUA\": \"Rua dos Flores\",\n    \"NUMERO\": 100,\n    \"CIDADE\": \"São Paulo\",\n    \"BAIRRO\": \"Vila Olímpia\",\n    \"DATA_NASCIMENTO\": \"1995-02-10\",\n    \"createdAt\": \"2023-05-06T00:59:03.048Z\",\n    \"updatedAt\": \"2023-05-06T00:59:03.048Z\"\n}"
+							"body": "{\n    \"id\": 1,\n    \"nome\": \"Camila Silva\",\n    \"cpf\": \"123.456.789-00\",\n    \"telefone\": \"(11) 1111-1111\",\n    \"email\": \"camila.silva@gmail.com\",\n    \"qtd_lavagem\": 0,\n    \"senha\": \"senha13\",\n    \"rua\": \"rua dos Flores\",\n    \"numero\": 100,\n    \"cidade\": \"São Paulo\",\n    \"bairro\": \"Vila Olímpia\",\n    \"data_nascimento\": \"1995-02-10\",\n    \"createdAt\": \"2023-05-06T00:59:03.048Z\",\n    \"updatedAt\": \"2023-05-06T00:59:03.048Z\"\n}"
 						}
 					]
 				},
@@ -164,7 +157,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"Rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
+							"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -172,12 +165,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/cliente",
-							"protocol": "http",
+							"raw": "{{base_url}}/cliente",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"cliente"
 							]
@@ -191,7 +182,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Fulano de Tal\",\r\n    \"CPF\":\"123.456.789-10\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":\"321\",\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"{{$randomDatePast}}\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":\"321\",\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -199,12 +190,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/cliente",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente"
 									]
@@ -244,7 +233,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 6,\n    \"NOME\": \"Fulano de Tal\",\n    \"CPF\": \"123.456.789-10\",\n    \"TELEFONE\": \"28999010203\",\n    \"EMAIL\": \"fulanodetal@gmail.com\",\n    \"QTD_LAVAGEM\": null,\n    \"SENHA\": \"123456789\",\n    \"RUA\": \"Rua ciclana\",\n    \"NUMERO\": 321,\n    \"CIDADE\": \"Cachoeiro de Itapemirim\",\n    \"BAIRRO\": \"Beltrano\",\n    \"DATA_NASCIMENTO\": \"2022-11-14\",\n    \"createdAt\": \"2023-05-06T01:10:49.420Z\",\n    \"updatedAt\": \"2023-05-06T01:10:49.420Z\"\n}"
+							"body": "{\n    \"id\": 6,\n    \"nome\": \"Fulano de Tal\",\n    \"cpf\": \"123.456.789-10\",\n    \"telefone\": \"28999010203\",\n    \"email\": \"fulanodetal@gmail.com\",\n    \"qtd_lavagem\": null,\n    \"senha\": \"123456789\",\n    \"rua\": \"rua ciclana\",\n    \"numero\": 321,\n    \"cidade\": \"Cachoeiro de Itapemirim\",\n    \"bairro\": \"Beltrano\",\n    \"data_nascimento\": \"2022-11-14\",\n    \"createdAt\": \"2023-05-06T01:10:49.420Z\",\n    \"updatedAt\": \"2023-05-06T01:10:49.420Z\"\n}"
 						},
 						{
 							"name": "[400 Bad Request] Create",
@@ -253,7 +242,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Fulano de Tal\",\r\n    \"CPF\":\"123.456.78910\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":\"321\",\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"{{$randomDatePast}}\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.78910\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":\"321\",\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -261,12 +250,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/cliente",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente"
 									]
@@ -306,7 +293,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"CPF do Cliente deve seguir o padrão NNN.NNN.NNN-NN!\"\n}"
+							"body": "{\n    \"message\": \"cpf do cliente deve seguir o padrão NNN.NNN.NNN-NN!\"\n}"
 						}
 					]
 				},
@@ -317,7 +304,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"Rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
+							"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -325,12 +312,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/cliente/3",
-							"protocol": "http",
+							"raw": "{{base_url}}/cliente/3",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"cliente",
 								"3"
@@ -345,7 +330,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Fulano de Tal da Silva\",\r\n    \"CPF\":\"123.456.789-10\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":70,\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"{{$randomDatePast}}\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Fulano de Tal da Silva\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":70,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -353,12 +338,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/cliente/2",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente/2",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente",
 										"2"
@@ -399,7 +382,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 2,\n    \"NOME\": \"Fulano de Tal da Silva\",\n    \"CPF\": \"123.456.789-10\",\n    \"TELEFONE\": \"28999010203\",\n    \"EMAIL\": \"fulanodetal@gmail.com\",\n    \"QTD_LAVAGEM\": 2,\n    \"SENHA\": \"123456789\",\n    \"RUA\": \"Rua ciclana\",\n    \"NUMERO\": 70,\n    \"CIDADE\": \"Cachoeiro de Itapemirim\",\n    \"BAIRRO\": \"Beltrano\",\n    \"DATA_NASCIMENTO\": \"2022-09-07\",\n    \"createdAt\": \"2023-05-06T01:21:01.264Z\",\n    \"updatedAt\": \"2023-05-06T01:21:05.695Z\"\n}"
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Fulano de Tal da Silva\",\n    \"cpf\": \"123.456.789-10\",\n    \"telefone\": \"28999010203\",\n    \"email\": \"fulanodetal@gmail.com\",\n    \"qtd_lavagem\": 2,\n    \"senha\": \"123456789\",\n    \"rua\": \"rua ciclana\",\n    \"numero\": 70,\n    \"cidade\": \"Cachoeiro de Itapemirim\",\n    \"bairro\": \"Beltrano\",\n    \"data_nascimento\": \"2022-09-07\",\n    \"createdAt\": \"2023-05-06T01:21:01.264Z\",\n    \"updatedAt\": \"2023-05-06T01:21:05.695Z\"\n}"
 						},
 						{
 							"name": "[400 Bad Request] Update",
@@ -408,7 +391,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Fulano de Tal da Silva\",\r\n    \"CPF\":\"123.456.789-10\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":70,\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"{{$randomDatePast}}\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Fulano de Tal da Silva\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":70,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -416,12 +399,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/cliente/100",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente/100",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente",
 										"100"
@@ -462,7 +443,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Cliente não encontrado!\"\n}"
+							"body": "{\n    \"message\": \"cliente não encontrado!\"\n}"
 						}
 					]
 				},
@@ -472,12 +453,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/cliente/5",
-							"protocol": "http",
+							"raw": "{{base_url}}/cliente/5",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"cliente",
 								"5"
@@ -491,12 +470,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/cliente/5",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente/5",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente",
 										"5"
@@ -537,7 +514,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 5,\n    \"NOME\": \"Juliana Almeida\",\n    \"CPF\": \"654.321.987-00\",\n    \"TELEFONE\": \"(11) 5555-5555\",\n    \"EMAIL\": \"juliana.almeida@gmail.com\",\n    \"QTD_LAVAGEM\": 3,\n    \"SENHA\": \"senh567\",\n    \"RUA\": \"Rua das Azaleias\",\n    \"NUMERO\": 500,\n    \"CIDADE\": \"São Paulo\",\n    \"BAIRRO\": \"Jardins\",\n    \"DATA_NASCIMENTO\": \"1992-03-02\",\n    \"createdAt\": \"2023-05-06T01:21:01.282Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.282Z\"\n}"
+							"body": "{\n    \"id\": 5,\n    \"nome\": \"Juliana Almeida\",\n    \"cpf\": \"654.321.987-00\",\n    \"telefone\": \"(11) 5555-5555\",\n    \"email\": \"juliana.almeida@gmail.com\",\n    \"qtd_lavagem\": 3,\n    \"senha\": \"senh567\",\n    \"rua\": \"rua das Azaleias\",\n    \"numero\": 500,\n    \"cidade\": \"São Paulo\",\n    \"bairro\": \"Jardins\",\n    \"data_nascimento\": \"1992-03-02\",\n    \"createdAt\": \"2023-05-06T01:21:01.282Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.282Z\"\n}"
 						},
 						{
 							"name": "[400 Bad Request] Delete",
@@ -545,12 +522,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/cliente/100",
-									"protocol": "http",
+									"raw": "{{base_url}}/cliente/100",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"cliente",
 										"100"
@@ -591,7 +566,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Cliente não encontrado!\"\n}"
+							"body": "{\n    \"message\": \"cliente não encontrado!\"\n}"
 						}
 					]
 				}
@@ -606,12 +581,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/funcionario",
-							"protocol": "http",
+							"raw": "{{base_url}}/funcionario",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"funcionario"
 							]
@@ -624,12 +597,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/funcionario",
-									"protocol": "http",
+									"raw": "{{base_url}}/funcionario",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"funcionario"
 									]
@@ -669,7 +640,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"NOME\": \"João Silva\",\n        \"CPF\": \"123.456.789-00\",\n        \"TELEFONE\": \"(31) 99999-9999\",\n        \"EMAIL\": \"joao.silva@example.com\",\n        \"SENHA\": \"123456\",\n        \"RUA\": \"Rua dos Funcionários\",\n        \"NUMERO\": 123,\n        \"CIDADE\": \"Belo Horizonte\",\n        \"BAIRRO\": \"Savassi\",\n        \"DATA_NASCIMENTO\": \"1990-01-01\",\n        \"createdAt\": \"2023-05-06T01:21:01.319Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.319Z\",\n        \"IDFILIAL\": 1,\n        \"FILIAL\": {\n            \"id\": 1,\n            \"NOME\": \"Filial A\",\n            \"LIMITE_DIARIO\": 1000,\n            \"RUA\": \"Rua A\",\n            \"BAIRRO\": \"Bairro A\",\n            \"CIDADE\": \"Cidade A\",\n            \"NUMERO\": 123,\n            \"CNPJ\": \"12.345.678/0001-90\",\n            \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"NOME\": \"Maria Souza\",\n        \"CPF\": \"987.654.321-00\",\n        \"TELEFONE\": \"(31) 88888-8888\",\n        \"EMAIL\": \"maria.souza@example.com\",\n        \"SENHA\": \"abcdef\",\n        \"RUA\": \"Rua dos Trabalhadores\",\n        \"NUMERO\": 456,\n        \"CIDADE\": \"Contagem\",\n        \"BAIRRO\": \"Centro\",\n        \"DATA_NASCIMENTO\": \"1985-03-15\",\n        \"createdAt\": \"2023-05-06T01:21:01.324Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.324Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"NOME\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"RUA\": \"Rua B\",\n            \"BAIRRO\": \"Bairro B\",\n            \"CIDADE\": \"Cidade B\",\n            \"NUMERO\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"NOME\": \"Ana Silva\",\n        \"CPF\": \"123.456.789-00\",\n        \"TELEFONE\": \"(11) 98765-4321\",\n        \"EMAIL\": \"ana.silva@example.com\",\n        \"SENHA\": \"minhasenha\",\n        \"RUA\": \"Rua das Flores\",\n        \"NUMERO\": 123,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Jardim Paulista\",\n        \"DATA_NASCIMENTO\": \"1990-05-10\",\n        \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n        \"IDFILIAL\": 1,\n        \"FILIAL\": {\n            \"id\": 1,\n            \"NOME\": \"Filial A\",\n            \"LIMITE_DIARIO\": 1000,\n            \"RUA\": \"Rua A\",\n            \"BAIRRO\": \"Bairro A\",\n            \"CIDADE\": \"Cidade A\",\n            \"NUMERO\": 123,\n            \"CNPJ\": \"12.345.678/0001-90\",\n            \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"NOME\": \"João Santos\",\n        \"CPF\": \"987.654.321-00\",\n        \"TELEFONE\": \"(21) 99876-5432\",\n        \"EMAIL\": \"joao.santos@example.com\",\n        \"SENHA\": \"outrasenha\",\n        \"RUA\": \"Av. Brasil\",\n        \"NUMERO\": 456,\n        \"CIDADE\": \"Rio de Janeiro\",\n        \"BAIRRO\": \"Copacabana\",\n        \"DATA_NASCIMENTO\": \"1995-02-15\",\n        \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"NOME\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"RUA\": \"Rua B\",\n            \"BAIRRO\": \"Bairro B\",\n            \"CIDADE\": \"Cidade B\",\n            \"NUMERO\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"NOME\": \"Pedro Oliveira\",\n        \"CPF\": \"111.222.333-44\",\n        \"TELEFONE\": \"(81) 98765-4321\",\n        \"EMAIL\": \"pedro.oliveira@example.com\",\n        \"SENHA\": \"senha123\",\n        \"RUA\": \"Rua da Paz\",\n        \"NUMERO\": 789,\n        \"CIDADE\": \"Recife\",\n        \"BAIRRO\": \"Boa Viagem\",\n        \"DATA_NASCIMENTO\": \"1988-09-23\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 3,\n        \"FILIAL\": {\n            \"id\": 3,\n            \"NOME\": \"Filial C\",\n            \"LIMITE_DIARIO\": 3000,\n            \"RUA\": \"Rua C\",\n            \"BAIRRO\": \"Bairro C\",\n            \"CIDADE\": \"Cidade C\",\n            \"NUMERO\": 789,\n            \"CNPJ\": \"23.456.789/0001-54\",\n            \"createdAt\": \"2023-05-06T01:21:01.296Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.296Z\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"NOME\": \"Marina Oliveira\",\n        \"CPF\": \"222.333.444-55\",\n        \"TELEFONE\": \"(12) 3456-7890\",\n        \"EMAIL\": \"marina.oliveira@example.com\",\n        \"SENHA\": \"outrasenha\",\n        \"RUA\": \"Rua dos Girassóis\",\n        \"NUMERO\": 456,\n        \"CIDADE\": \"Taubaté\",\n        \"BAIRRO\": \"Jardim das Nações\",\n        \"DATA_NASCIMENTO\": \"1992-11-30\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"NOME\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"RUA\": \"Rua B\",\n            \"BAIRRO\": \"Bairro B\",\n            \"CIDADE\": \"Cidade B\",\n            \"NUMERO\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"NOME\": \"Lucas Souza\",\n        \"CPF\": \"444.555.666-77\",\n        \"TELEFONE\": \"(31) 98765-4321\",\n        \"EMAIL\": \"lucas.souza@example.com\",\n        \"SENHA\": \"minhasenha\",\n        \"RUA\": \"Rua das Palmeiras\",\n        \"NUMERO\": 789,\n        \"CIDADE\": \"Belo Horizonte\",\n        \"BAIRRO\": \"Savassi\",\n        \"DATA_NASCIMENTO\": \"1994-04-17\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 3,\n        \"FILIAL\": {\n            \"id\": 3,\n            \"NOME\": \"Filial C\",\n            \"LIMITE_DIARIO\": 3000,\n            \"RUA\": \"Rua C\",\n            \"BAIRRO\": \"Bairro C\",\n            \"CIDADE\": \"Cidade C\",\n            \"NUMERO\": 789,\n            \"CNPJ\": \"23.456.789/0001-54\",\n            \"createdAt\": \"2023-05-06T01:21:01.296Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.296Z\"\n        }\n    }\n]"
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"João Silva\",\n        \"cpf\": \"123.456.789-00\",\n        \"telefone\": \"(31) 99999-9999\",\n        \"email\": \"joao.silva@example.com\",\n        \"senha\": \"123456\",\n        \"rua\": \"rua dos Funcionários\",\n        \"numero\": 123,\n        \"cidade\": \"Belo Horizonte\",\n        \"bairro\": \"Savassi\",\n        \"data_nascimento\": \"1990-01-01\",\n        \"createdAt\": \"2023-05-06T01:21:01.319Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.319Z\",\n        \"IDFILIAL\": 1,\n        \"FILIAL\": {\n            \"id\": 1,\n            \"nome\": \"Filial A\",\n            \"LIMITE_DIARIO\": 1000,\n            \"rua\": \"rua A\",\n            \"bairro\": \"bairro A\",\n            \"cidade\": \"cidade A\",\n            \"numero\": 123,\n            \"CNPJ\": \"12.345.678/0001-90\",\n            \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Maria Souza\",\n        \"cpf\": \"987.654.321-00\",\n        \"telefone\": \"(31) 88888-8888\",\n        \"email\": \"maria.souza@example.com\",\n        \"senha\": \"abcdef\",\n        \"rua\": \"rua dos Trabalhadores\",\n        \"numero\": 456,\n        \"cidade\": \"Contagem\",\n        \"bairro\": \"Centro\",\n        \"data_nascimento\": \"1985-03-15\",\n        \"createdAt\": \"2023-05-06T01:21:01.324Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.324Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"nome\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"rua\": \"rua B\",\n            \"bairro\": \"bairro B\",\n            \"cidade\": \"cidade B\",\n            \"numero\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Ana Silva\",\n        \"cpf\": \"123.456.789-00\",\n        \"telefone\": \"(11) 98765-4321\",\n        \"email\": \"ana.silva@example.com\",\n        \"senha\": \"minhasenha\",\n        \"rua\": \"rua das Flores\",\n        \"numero\": 123,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Jardim Paulista\",\n        \"data_nascimento\": \"1990-05-10\",\n        \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n        \"IDFILIAL\": 1,\n        \"FILIAL\": {\n            \"id\": 1,\n            \"nome\": \"Filial A\",\n            \"LIMITE_DIARIO\": 1000,\n            \"rua\": \"rua A\",\n            \"bairro\": \"bairro A\",\n            \"cidade\": \"cidade A\",\n            \"numero\": 123,\n            \"CNPJ\": \"12.345.678/0001-90\",\n            \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"João Santos\",\n        \"cpf\": \"987.654.321-00\",\n        \"telefone\": \"(21) 99876-5432\",\n        \"email\": \"joao.santos@example.com\",\n        \"senha\": \"outrasenha\",\n        \"rua\": \"Av. Brasil\",\n        \"numero\": 456,\n        \"cidade\": \"Rio de Janeiro\",\n        \"bairro\": \"Copacabana\",\n        \"data_nascimento\": \"1995-02-15\",\n        \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"nome\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"rua\": \"rua B\",\n            \"bairro\": \"bairro B\",\n            \"cidade\": \"cidade B\",\n            \"numero\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Pedro Oliveira\",\n        \"cpf\": \"111.222.333-44\",\n        \"telefone\": \"(81) 98765-4321\",\n        \"email\": \"pedro.oliveira@example.com\",\n        \"senha\": \"senha123\",\n        \"rua\": \"rua da Paz\",\n        \"numero\": 789,\n        \"cidade\": \"Recife\",\n        \"bairro\": \"Boa Viagem\",\n        \"data_nascimento\": \"1988-09-23\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 3,\n        \"FILIAL\": {\n            \"id\": 3,\n            \"nome\": \"Filial C\",\n            \"LIMITE_DIARIO\": 3000,\n            \"rua\": \"rua C\",\n            \"bairro\": \"bairro C\",\n            \"cidade\": \"cidade C\",\n            \"numero\": 789,\n            \"CNPJ\": \"23.456.789/0001-54\",\n            \"createdAt\": \"2023-05-06T01:21:01.296Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.296Z\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Marina Oliveira\",\n        \"cpf\": \"222.333.444-55\",\n        \"telefone\": \"(12) 3456-7890\",\n        \"email\": \"marina.oliveira@example.com\",\n        \"senha\": \"outrasenha\",\n        \"rua\": \"rua dos Girassóis\",\n        \"numero\": 456,\n        \"cidade\": \"Taubaté\",\n        \"bairro\": \"Jardim das Nações\",\n        \"data_nascimento\": \"1992-11-30\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 2,\n        \"FILIAL\": {\n            \"id\": 2,\n            \"nome\": \"Filial B\",\n            \"LIMITE_DIARIO\": 2000,\n            \"rua\": \"rua B\",\n            \"bairro\": \"bairro B\",\n            \"cidade\": \"cidade B\",\n            \"numero\": 456,\n            \"CNPJ\": \"98.765.432/0001-21\",\n            \"createdAt\": \"2023-05-06T01:21:01.292Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.292Z\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Lucas Souza\",\n        \"cpf\": \"444.555.666-77\",\n        \"telefone\": \"(31) 98765-4321\",\n        \"email\": \"lucas.souza@example.com\",\n        \"senha\": \"minhasenha\",\n        \"rua\": \"rua das Palmeiras\",\n        \"numero\": 789,\n        \"cidade\": \"Belo Horizonte\",\n        \"bairro\": \"Savassi\",\n        \"data_nascimento\": \"1994-04-17\",\n        \"createdAt\": \"2023-05-06T01:21:01.330Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.330Z\",\n        \"IDFILIAL\": 3,\n        \"FILIAL\": {\n            \"id\": 3,\n            \"nome\": \"Filial C\",\n            \"LIMITE_DIARIO\": 3000,\n            \"rua\": \"rua C\",\n            \"bairro\": \"bairro C\",\n            \"cidade\": \"cidade C\",\n            \"numero\": 789,\n            \"CNPJ\": \"23.456.789/0001-54\",\n            \"createdAt\": \"2023-05-06T01:21:01.296Z\",\n            \"updatedAt\": \"2023-05-06T01:21:01.296Z\"\n        }\n    }\n]"
 						}
 					]
 				},
@@ -679,12 +650,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/funcionario/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/funcionario/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"funcionario",
 								"1"
@@ -698,12 +667,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/funcionario/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/funcionario/1",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"funcionario",
 										"1"
@@ -744,7 +711,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"NOME\": \"João Silva\",\n    \"CPF\": \"123.456.789-00\",\n    \"TELEFONE\": \"(31) 99999-9999\",\n    \"EMAIL\": \"joao.silva@example.com\",\n    \"SENHA\": \"123456\",\n    \"RUA\": \"Rua dos Funcionários\",\n    \"NUMERO\": 123,\n    \"CIDADE\": \"Belo Horizonte\",\n    \"BAIRRO\": \"Savassi\",\n    \"DATA_NASCIMENTO\": \"1990-01-01\",\n    \"createdAt\": \"2023-05-06T01:21:01.319Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.319Z\",\n    \"IDFILIAL\": 1,\n    \"FILIAL\": {\n        \"id\": 1,\n        \"NOME\": \"Filial A\",\n        \"LIMITE_DIARIO\": 1000,\n        \"RUA\": \"Rua A\",\n        \"BAIRRO\": \"Bairro A\",\n        \"CIDADE\": \"Cidade A\",\n        \"NUMERO\": 123,\n        \"CNPJ\": \"12.345.678/0001-90\",\n        \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n    }\n}"
+							"body": "{\n    \"id\": 1,\n    \"nome\": \"João Silva\",\n    \"cpf\": \"123.456.789-00\",\n    \"telefone\": \"(31) 99999-9999\",\n    \"email\": \"joao.silva@example.com\",\n    \"senha\": \"123456\",\n    \"rua\": \"rua dos Funcionários\",\n    \"numero\": 123,\n    \"cidade\": \"Belo Horizonte\",\n    \"bairro\": \"Savassi\",\n    \"data_nascimento\": \"1990-01-01\",\n    \"createdAt\": \"2023-05-06T01:21:01.319Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.319Z\",\n    \"IDFILIAL\": 1,\n    \"FILIAL\": {\n        \"id\": 1,\n        \"nome\": \"Filial A\",\n        \"LIMITE_DIARIO\": 1000,\n        \"rua\": \"rua A\",\n        \"bairro\": \"bairro A\",\n        \"cidade\": \"cidade A\",\n        \"numero\": 123,\n        \"CNPJ\": \"12.345.678/0001-90\",\n        \"createdAt\": \"2023-05-06T01:21:01.287Z\",\n        \"updatedAt\": \"2023-05-06T01:21:01.287Z\"\n    }\n}"
 						}
 					]
 				},
@@ -755,7 +722,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"Fulano de Tal\",\r\n    \"CPF\":\"123.456.789-10\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":321,\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"1997-02-13\",\r\n    \"IDFILIAL\": 1,\r\n        \"FILIAL\": {\r\n        \"ID\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"nome\":\"Fulano de Tal\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"1997-02-13\",\r\n    \"IDFILIAL\": 1,\r\n        \"FILIAL\": {\r\n        \"ID\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -763,12 +730,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/funcionario",
-							"protocol": "http",
+							"raw": "{{base_url}}/funcionario",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"funcionario"
 							]
@@ -783,7 +748,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"José da Silva\",\r\n    \"CPF\":\"123.456.789-10\",\r\n    \"TELEFONE\":\"28999010203\",\r\n    \"EMAIL\":\"fulanodetal@gmail.com\",\r\n    \"SENHA\":\"123456789\",\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"NUMERO\":321,\r\n    \"CIDADE\":\"Cachoeiro de Itapemirim\",\r\n    \"BAIRRO\":\"Beltrano\",\r\n    \"DATA_NASCIMENTO\":\"{{$randomDatePast}}\",\r\n    \"IDFILIAL\":1\r\n}",
+							"raw": "{\r\n    \"nome\":\"José da Silva\",\r\n    \"cpf\":\"123.456.789-10\",\r\n    \"telefone\":\"28999010203\",\r\n    \"email\":\"fulanodetal@gmail.com\",\r\n    \"senha\":\"123456789\",\r\n    \"rua\":\"rua ciclana\",\r\n    \"numero\":321,\r\n    \"cidade\":\"Cachoeiro de Itapemirim\",\r\n    \"bairro\":\"Beltrano\",\r\n    \"data_nascimento\":\"{{$randomDatePast}}\",\r\n    \"IDFILIAL\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -791,12 +756,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/funcionario/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/funcionario/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"funcionario",
 								"2"
@@ -811,12 +774,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/funcionario/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/funcionario/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"funcionario",
 								"2"
@@ -830,12 +791,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/funcionario/3",
-									"protocol": "http",
+									"raw": "{{base_url}}/funcionario/3",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"funcionario",
 										"3"
@@ -876,7 +835,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 3,\n    \"NOME\": \"Ana Silva\",\n    \"CPF\": \"123.456.789-00\",\n    \"TELEFONE\": \"(11) 98765-4321\",\n    \"EMAIL\": \"ana.silva@example.com\",\n    \"SENHA\": \"minhasenha\",\n    \"RUA\": \"Rua das Flores\",\n    \"NUMERO\": 123,\n    \"CIDADE\": \"São Paulo\",\n    \"BAIRRO\": \"Jardim Paulista\",\n    \"DATA_NASCIMENTO\": \"1990-05-10\",\n    \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n    \"IDFILIAL\": 1\n}"
+							"body": "{\n    \"id\": 3,\n    \"nome\": \"Ana Silva\",\n    \"cpf\": \"123.456.789-00\",\n    \"telefone\": \"(11) 98765-4321\",\n    \"email\": \"ana.silva@example.com\",\n    \"senha\": \"minhasenha\",\n    \"rua\": \"rua das Flores\",\n    \"numero\": 123,\n    \"cidade\": \"São Paulo\",\n    \"bairro\": \"Jardim Paulista\",\n    \"data_nascimento\": \"1990-05-10\",\n    \"createdAt\": \"2023-05-06T01:21:01.329Z\",\n    \"updatedAt\": \"2023-05-06T01:21:01.329Z\",\n    \"IDFILIAL\": 1\n}"
 						},
 						{
 							"name": "[400 Bad Request] Delete",
@@ -884,12 +843,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/funcionario/100",
-									"protocol": "http",
+									"raw": "{{base_url}}/funcionario/100",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"funcionario",
 										"100"
@@ -945,12 +902,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/filial",
-							"protocol": "http",
+							"raw": "{{base_url}}/filial",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"filial"
 							]
@@ -963,12 +918,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/filial",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial"
 									]
@@ -1008,7 +961,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"NOME\": \"Filial A\",\n        \"LIMITE_DIARIO\": 1000,\n        \"RUA\": \"Rua A\",\n        \"BAIRRO\": \"Bairro A\",\n        \"CIDADE\": \"Cidade A\",\n        \"NUMERO\": 123,\n        \"CNPJ\": \"12.345.678/0001-90\",\n        \"createdAt\": \"2023-05-06T01:55:38.954Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.954Z\"\n    },\n    {\n        \"id\": 2,\n        \"NOME\": \"Filial B\",\n        \"LIMITE_DIARIO\": 2000,\n        \"RUA\": \"Rua B\",\n        \"BAIRRO\": \"Bairro B\",\n        \"CIDADE\": \"Cidade B\",\n        \"NUMERO\": 456,\n        \"CNPJ\": \"98.765.432/0001-21\",\n        \"createdAt\": \"2023-05-06T01:55:38.958Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.958Z\"\n    },\n    {\n        \"id\": 3,\n        \"NOME\": \"Filial C\",\n        \"LIMITE_DIARIO\": 3000,\n        \"RUA\": \"Rua C\",\n        \"BAIRRO\": \"Bairro C\",\n        \"CIDADE\": \"Cidade C\",\n        \"NUMERO\": 789,\n        \"CNPJ\": \"23.456.789/0001-54\",\n        \"createdAt\": \"2023-05-06T01:55:38.962Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.962Z\"\n    }\n]"
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Filial A\",\n        \"LIMITE_DIARIO\": 1000,\n        \"rua\": \"rua A\",\n        \"bairro\": \"bairro A\",\n        \"cidade\": \"cidade A\",\n        \"numero\": 123,\n        \"CNPJ\": \"12.345.678/0001-90\",\n        \"createdAt\": \"2023-05-06T01:55:38.954Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.954Z\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Filial B\",\n        \"LIMITE_DIARIO\": 2000,\n        \"rua\": \"rua B\",\n        \"bairro\": \"bairro B\",\n        \"cidade\": \"cidade B\",\n        \"numero\": 456,\n        \"CNPJ\": \"98.765.432/0001-21\",\n        \"createdAt\": \"2023-05-06T01:55:38.958Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.958Z\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Filial C\",\n        \"LIMITE_DIARIO\": 3000,\n        \"rua\": \"rua C\",\n        \"bairro\": \"bairro C\",\n        \"cidade\": \"cidade C\",\n        \"numero\": 789,\n        \"CNPJ\": \"23.456.789/0001-54\",\n        \"createdAt\": \"2023-05-06T01:55:38.962Z\",\n        \"updatedAt\": \"2023-05-06T01:55:38.962Z\"\n    }\n]"
 						}
 					]
 				},
@@ -1018,12 +971,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/filial/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/filial/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"filial",
 								"1"
@@ -1039,7 +990,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"Filial E\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
+							"raw": "{\r\n    \"nome\":\"Filial E\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1047,12 +998,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/filial",
-							"protocol": "http",
+							"raw": "{{base_url}}/filial",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"filial"
 							]
@@ -1066,7 +1015,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Filial D\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Filial D\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1074,12 +1023,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/filial",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial"
 									]
@@ -1119,7 +1066,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 4,\n    \"NOME\": \"Filial D\",\n    \"LIMITE_DIARIO\": 25,\n    \"RUA\": \"Rua ciclana\",\n    \"BAIRRO\": \"Boa Vista\",\n    \"CIDADE\": \"Marataizes\",\n    \"NUMERO\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:05:05.573Z\",\n    \"updatedAt\": \"2023-05-06T02:05:05.573Z\"\n}"
+							"body": "{\n    \"id\": 4,\n    \"nome\": \"Filial D\",\n    \"LIMITE_DIARIO\": 25,\n    \"rua\": \"rua ciclana\",\n    \"bairro\": \"Boa Vista\",\n    \"cidade\": \"Marataizes\",\n    \"numero\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:05:05.573Z\",\n    \"updatedAt\": \"2023-05-06T02:05:05.573Z\"\n}"
 						},
 						{
 							"name": "[400 Bad Request] Create",
@@ -1128,7 +1075,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Filial D\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/123456\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Filial D\",\r\n    \"LIMITE_DIARIO\":25,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1136,12 +1083,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/filial",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial"
 									]
@@ -1192,7 +1137,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
+							"raw": "{\r\n    \"nome\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1200,12 +1145,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/filial/100",
-							"protocol": "http",
+							"raw": "{{base_url}}/filial/100",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"filial",
 								"100"
@@ -1220,7 +1163,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1228,12 +1171,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/filial/2",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial/2",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial",
 										"2"
@@ -1274,7 +1215,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 2,\n    \"NOME\": \"Filial Alterada\",\n    \"LIMITE_DIARIO\": 50,\n    \"RUA\": \"Rua ciclana\",\n    \"BAIRRO\": \"Boa Vista\",\n    \"CIDADE\": \"Marataizes\",\n    \"NUMERO\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:04:09.996Z\",\n    \"updatedAt\": \"2023-05-06T02:07:34.759Z\"\n}"
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Filial Alterada\",\n    \"LIMITE_DIARIO\": 50,\n    \"rua\": \"rua ciclana\",\n    \"bairro\": \"Boa Vista\",\n    \"cidade\": \"Marataizes\",\n    \"numero\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:04:09.996Z\",\n    \"updatedAt\": \"2023-05-06T02:07:34.759Z\"\n}"
 						},
 						{
 							"name": "[400 Bad Request] Update",
@@ -1283,7 +1224,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"RUA\":\"Rua ciclana\",\r\n    \"BAIRRO\":\"Boa Vista\",\r\n    \"CIDADE\":\"Marataizes\",\r\n    \"NUMERO\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
+									"raw": "{\r\n    \"nome\":\"Filial Alterada\",\r\n    \"LIMITE_DIARIO\":50,\r\n    \"rua\":\"rua ciclana\",\r\n    \"bairro\":\"Boa Vista\",\r\n    \"cidade\":\"Marataizes\",\r\n    \"numero\":174,\r\n    \"CNPJ\":\"32.123.123/1234-56\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1291,12 +1232,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/filial/100",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial/100",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial",
 										"100"
@@ -1347,12 +1286,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/filial/4",
-							"protocol": "http",
+							"raw": "{{base_url}}/filial/4",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"filial",
 								"4"
@@ -1366,12 +1303,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/filial/3",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial/3",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial",
 										"3"
@@ -1420,12 +1355,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/filial/4",
-									"protocol": "http",
+									"raw": "{{base_url}}/filial/4",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"filial",
 										"4"
@@ -1466,7 +1399,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 4,\n    \"NOME\": \"Filial D\",\n    \"LIMITE_DIARIO\": 25,\n    \"RUA\": \"Rua ciclana\",\n    \"BAIRRO\": \"Boa Vista\",\n    \"CIDADE\": \"Marataizes\",\n    \"NUMERO\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:05:05.573Z\",\n    \"updatedAt\": \"2023-05-06T02:05:05.573Z\"\n}"
+							"body": "{\n    \"id\": 4,\n    \"nome\": \"Filial D\",\n    \"LIMITE_DIARIO\": 25,\n    \"rua\": \"rua ciclana\",\n    \"bairro\": \"Boa Vista\",\n    \"cidade\": \"Marataizes\",\n    \"numero\": 174,\n    \"CNPJ\": \"32.123.123/1234-56\",\n    \"createdAt\": \"2023-05-06T02:05:05.573Z\",\n    \"updatedAt\": \"2023-05-06T02:05:05.573Z\"\n}"
 						}
 					]
 				}
@@ -1481,12 +1414,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/veiculo",
-							"protocol": "http",
+							"raw": "{{base_url}}/veiculo",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"veiculo"
 							]
@@ -1499,12 +1430,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/veiculo",
-									"protocol": "http",
+									"raw": "{{base_url}}/veiculo",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"veiculo"
 									]
@@ -1544,7 +1473,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"PLACA\": \"ABC-1234\",\n        \"MARCA\": \"Fiat\",\n        \"MODELO\": \"Uno\",\n        \"COR\": \"Azul\",\n        \"ANO\": 2021,\n        \"createdAt\": \"2023-05-06T02:04:10.019Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.019Z\",\n        \"IDCLIENTE\": 1,\n        \"CLIENTE\": {\n            \"id\": 1,\n            \"NOME\": \"Camila Silva\",\n            \"CPF\": \"123.456.789-00\",\n            \"TELEFONE\": \"(11) 1111-1111\",\n            \"EMAIL\": \"camila.silva@gmail.com\",\n            \"QTD_LAVAGEM\": 0,\n            \"SENHA\": \"senha13\",\n            \"RUA\": \"Rua dos Flores\",\n            \"NUMERO\": 100,\n            \"CIDADE\": \"São Paulo\",\n            \"BAIRRO\": \"Vila Olímpia\",\n            \"DATA_NASCIMENTO\": \"1995-02-10\",\n            \"createdAt\": \"2023-05-06T02:04:09.967Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.967Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"PLACA\": \"DEF-5678\",\n        \"MARCA\": \"Volkswagen\",\n        \"MODELO\": \"Gol\",\n        \"COR\": \"Preto\",\n        \"ANO\": 2018,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"IDCLIENTE\": 2,\n        \"CLIENTE\": {\n            \"id\": 2,\n            \"NOME\": \"Paulo Oliveira\",\n            \"CPF\": \"987.654.321-00\",\n            \"TELEFONE\": \"(11) 2222-2222\",\n            \"EMAIL\": \"paulo.oliveira@gmail.com\",\n            \"QTD_LAVAGEM\": 2,\n            \"SENHA\": \"senha1\",\n            \"RUA\": \"Rua das Palmeiras\",\n            \"NUMERO\": 200,\n            \"CIDADE\": \"São Paulo\",\n            \"BAIRRO\": \"Moema\",\n            \"DATA_NASCIMENTO\": \"1987-05-20\",\n            \"createdAt\": \"2023-05-06T02:04:09.977Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.977Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"PLACA\": \"GHI-9101\",\n        \"MARCA\": \"Ford\",\n        \"MODELO\": \"Fiesta\",\n        \"COR\": \"Prata\",\n        \"ANO\": 2020,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"IDCLIENTE\": 1,\n        \"CLIENTE\": {\n            \"id\": 1,\n            \"NOME\": \"Camila Silva\",\n            \"CPF\": \"123.456.789-00\",\n            \"TELEFONE\": \"(11) 1111-1111\",\n            \"EMAIL\": \"camila.silva@gmail.com\",\n            \"QTD_LAVAGEM\": 0,\n            \"SENHA\": \"senha13\",\n            \"RUA\": \"Rua dos Flores\",\n            \"NUMERO\": 100,\n            \"CIDADE\": \"São Paulo\",\n            \"BAIRRO\": \"Vila Olímpia\",\n            \"DATA_NASCIMENTO\": \"1995-02-10\",\n            \"createdAt\": \"2023-05-06T02:04:09.967Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.967Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"PLACA\": \"JKL-2345\",\n        \"MARCA\": \"Chevrolet\",\n        \"MODELO\": \"Onix\",\n        \"COR\": \"Vermelho\",\n        \"ANO\": 2019,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"IDCLIENTE\": 3,\n        \"CLIENTE\": {\n            \"id\": 3,\n            \"NOME\": \"Ana Souza\",\n            \"CPF\": \"789.123.456-00\",\n            \"TELEFONE\": \"(11) 3333-3333\",\n            \"EMAIL\": \"ana.souza@gmail.com\",\n            \"QTD_LAVAGEM\": 5,\n            \"SENHA\": \"senha1\",\n            \"RUA\": \"Rua dos Pinheiros\",\n            \"NUMERO\": 300,\n            \"CIDADE\": \"São Paulo\",\n            \"BAIRRO\": \"Pinheiros\",\n            \"DATA_NASCIMENTO\": \"1990-11-15\",\n            \"createdAt\": \"2023-05-06T02:04:09.983Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.983Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"PLACA\": \"MNO-6789\",\n        \"MARCA\": \"Renault\",\n        \"MODELO\": \"Sandero\",\n        \"COR\": \"Branco\",\n        \"ANO\": 2022,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"IDCLIENTE\": 2,\n        \"CLIENTE\": {\n            \"id\": 2,\n            \"NOME\": \"Paulo Oliveira\",\n            \"CPF\": \"987.654.321-00\",\n            \"TELEFONE\": \"(11) 2222-2222\",\n            \"EMAIL\": \"paulo.oliveira@gmail.com\",\n            \"QTD_LAVAGEM\": 2,\n            \"SENHA\": \"senha1\",\n            \"RUA\": \"Rua das Palmeiras\",\n            \"NUMERO\": 200,\n            \"CIDADE\": \"São Paulo\",\n            \"BAIRRO\": \"Moema\",\n            \"DATA_NASCIMENTO\": \"1987-05-20\",\n            \"createdAt\": \"2023-05-06T02:04:09.977Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.977Z\"\n        }\n    }\n]"
+							"body": "[\n    {\n        \"id\": 1,\n        \"PLACA\": \"ABC-1234\",\n        \"MARCA\": \"Fiat\",\n        \"MODELO\": \"Uno\",\n        \"COR\": \"Azul\",\n        \"ANO\": 2021,\n        \"createdAt\": \"2023-05-06T02:04:10.019Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.019Z\",\n        \"idcliente\": 1,\n        \"cliente\": {\n            \"id\": 1,\n            \"nome\": \"Camila Silva\",\n            \"cpf\": \"123.456.789-00\",\n            \"telefone\": \"(11) 1111-1111\",\n            \"email\": \"camila.silva@gmail.com\",\n            \"qtd_lavagem\": 0,\n            \"senha\": \"senha13\",\n            \"rua\": \"rua dos Flores\",\n            \"numero\": 100,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Vila Olímpia\",\n            \"data_nascimento\": \"1995-02-10\",\n            \"createdAt\": \"2023-05-06T02:04:09.967Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.967Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"PLACA\": \"DEF-5678\",\n        \"MARCA\": \"Volkswagen\",\n        \"MODELO\": \"Gol\",\n        \"COR\": \"Preto\",\n        \"ANO\": 2018,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"idcliente\": 2,\n        \"cliente\": {\n            \"id\": 2,\n            \"nome\": \"Paulo Oliveira\",\n            \"cpf\": \"987.654.321-00\",\n            \"telefone\": \"(11) 2222-2222\",\n            \"email\": \"paulo.oliveira@gmail.com\",\n            \"qtd_lavagem\": 2,\n            \"senha\": \"senha1\",\n            \"rua\": \"rua das Palmeiras\",\n            \"numero\": 200,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Moema\",\n            \"data_nascimento\": \"1987-05-20\",\n            \"createdAt\": \"2023-05-06T02:04:09.977Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.977Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"PLACA\": \"GHI-9101\",\n        \"MARCA\": \"Ford\",\n        \"MODELO\": \"Fiesta\",\n        \"COR\": \"Prata\",\n        \"ANO\": 2020,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"idcliente\": 1,\n        \"cliente\": {\n            \"id\": 1,\n            \"nome\": \"Camila Silva\",\n            \"cpf\": \"123.456.789-00\",\n            \"telefone\": \"(11) 1111-1111\",\n            \"email\": \"camila.silva@gmail.com\",\n            \"qtd_lavagem\": 0,\n            \"senha\": \"senha13\",\n            \"rua\": \"rua dos Flores\",\n            \"numero\": 100,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Vila Olímpia\",\n            \"data_nascimento\": \"1995-02-10\",\n            \"createdAt\": \"2023-05-06T02:04:09.967Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.967Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"PLACA\": \"JKL-2345\",\n        \"MARCA\": \"Chevrolet\",\n        \"MODELO\": \"Onix\",\n        \"COR\": \"Vermelho\",\n        \"ANO\": 2019,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"idcliente\": 3,\n        \"cliente\": {\n            \"id\": 3,\n            \"nome\": \"Ana Souza\",\n            \"cpf\": \"789.123.456-00\",\n            \"telefone\": \"(11) 3333-3333\",\n            \"email\": \"ana.souza@gmail.com\",\n            \"qtd_lavagem\": 5,\n            \"senha\": \"senha1\",\n            \"rua\": \"rua dos Pinheiros\",\n            \"numero\": 300,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Pinheiros\",\n            \"data_nascimento\": \"1990-11-15\",\n            \"createdAt\": \"2023-05-06T02:04:09.983Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.983Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"PLACA\": \"MNO-6789\",\n        \"MARCA\": \"Renault\",\n        \"MODELO\": \"Sandero\",\n        \"COR\": \"Branco\",\n        \"ANO\": 2022,\n        \"createdAt\": \"2023-05-06T02:04:10.020Z\",\n        \"updatedAt\": \"2023-05-06T02:04:10.020Z\",\n        \"idcliente\": 2,\n        \"cliente\": {\n            \"id\": 2,\n            \"nome\": \"Paulo Oliveira\",\n            \"cpf\": \"987.654.321-00\",\n            \"telefone\": \"(11) 2222-2222\",\n            \"email\": \"paulo.oliveira@gmail.com\",\n            \"qtd_lavagem\": 2,\n            \"senha\": \"senha1\",\n            \"rua\": \"rua das Palmeiras\",\n            \"numero\": 200,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Moema\",\n            \"data_nascimento\": \"1987-05-20\",\n            \"createdAt\": \"2023-05-06T02:04:09.977Z\",\n            \"updatedAt\": \"2023-05-06T02:04:09.977Z\"\n        }\n    }\n]"
 						}
 					]
 				},
@@ -1554,12 +1483,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/veiculo/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/veiculo/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"veiculo",
 								"1"
@@ -1573,12 +1500,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/veiculo/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/veiculo/1",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"veiculo",
 										"1"
@@ -1619,7 +1544,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"PLACA\": \"ABC-1234\",\n    \"MARCA\": \"Fiat\",\n    \"MODELO\": \"Uno\",\n    \"COR\": \"Azul\",\n    \"ANO\": 2021,\n    \"createdAt\": \"2023-05-06T02:19:44.944Z\",\n    \"updatedAt\": \"2023-05-06T02:19:44.944Z\",\n    \"IDCLIENTE\": 1,\n    \"CLIENTE\": {\n        \"id\": 1,\n        \"NOME\": \"Camila Silva\",\n        \"CPF\": \"123.456.789-00\",\n        \"TELEFONE\": \"(11) 1111-1111\",\n        \"EMAIL\": \"camila.silva@gmail.com\",\n        \"QTD_LAVAGEM\": 0,\n        \"SENHA\": \"senha13\",\n        \"RUA\": \"Rua dos Flores\",\n        \"NUMERO\": 100,\n        \"CIDADE\": \"São Paulo\",\n        \"BAIRRO\": \"Vila Olímpia\",\n        \"DATA_NASCIMENTO\": \"1995-02-10\",\n        \"createdAt\": \"2023-05-06T02:19:44.886Z\",\n        \"updatedAt\": \"2023-05-06T02:19:44.886Z\"\n    }\n}"
+							"body": "{\n    \"id\": 1,\n    \"PLACA\": \"ABC-1234\",\n    \"MARCA\": \"Fiat\",\n    \"MODELO\": \"Uno\",\n    \"COR\": \"Azul\",\n    \"ANO\": 2021,\n    \"createdAt\": \"2023-05-06T02:19:44.944Z\",\n    \"updatedAt\": \"2023-05-06T02:19:44.944Z\",\n    \"idcliente\": 1,\n    \"cliente\": {\n        \"id\": 1,\n        \"nome\": \"Camila Silva\",\n        \"cpf\": \"123.456.789-00\",\n        \"telefone\": \"(11) 1111-1111\",\n        \"email\": \"camila.silva@gmail.com\",\n        \"qtd_lavagem\": 0,\n        \"senha\": \"senha13\",\n        \"rua\": \"rua dos Flores\",\n        \"numero\": 100,\n        \"cidade\": \"São Paulo\",\n        \"bairro\": \"Vila Olímpia\",\n        \"data_nascimento\": \"1995-02-10\",\n        \"createdAt\": \"2023-05-06T02:19:44.886Z\",\n        \"updatedAt\": \"2023-05-06T02:19:44.886Z\"\n    }\n}"
 						}
 					]
 				},
@@ -1630,7 +1555,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"PLACA\":\"AWS-1425\",\r\n    \"MARCA\":\"ABC\",\r\n    \"MODELO\":\"XYZ\",\r\n    \"COR\":\"Azul Marinho\",\r\n    \"ANO\":\"2020\",\r\n    \"IDCLIENTE\": 1,\r\n    \"CLIENTE\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"placa\":\"AWS-1425\",\r\n    \"marca\":\"ABC\",\r\n    \"modelo\":\"XYZ\",\r\n    \"cor\":\"Azul Marinho\",\r\n    \"ano\":\"2020\",\r\n    \"idcliente\": 1,\r\n    \"cliente\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1638,12 +1563,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/veiculo",
-							"protocol": "http",
+							"raw": "{{base_url}}/veiculo",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"veiculo"
 							]
@@ -1658,7 +1581,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"PLACA\":\"AWS-1425\",\r\n    \"MARCA\":\"ABC\",\r\n    \"MODELO\":\"XYZ\",\r\n    \"COR\":\"Azul Marinho\",\r\n    \"ANO\":\"2020\",\r\n    \"IDCLIENTE\": 1\r\n}",
+							"raw": "{\r\n    \"placa\":\"AWS-1425\",\r\n    \"marca\":\"ABC\",\r\n    \"modelo\":\"XYZ\",\r\n    \"cor\":\"Azul Marinho\",\r\n    \"ano\":\"2020\",\r\n    \"idcliente\": 1,\r\n    \"cliente\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1666,12 +1589,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/veiculo/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/veiculo/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"veiculo",
 								"2"
@@ -1686,12 +1607,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/veiculo/3",
-							"protocol": "http",
+							"raw": "{{base_url}}/veiculo/3",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"veiculo",
 								"3"
@@ -1705,12 +1624,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/veiculo/3",
-									"protocol": "http",
+									"raw": "{{base_url}}/veiculo/3",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"veiculo",
 										"3"
@@ -1751,7 +1668,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 3,\n    \"PLACA\": \"GHI-9101\",\n    \"MARCA\": \"Ford\",\n    \"MODELO\": \"Fiesta\",\n    \"COR\": \"Prata\",\n    \"ANO\": 2020,\n    \"createdAt\": \"2023-05-06T02:19:44.944Z\",\n    \"updatedAt\": \"2023-05-06T02:19:44.944Z\",\n    \"IDCLIENTE\": 1\n}"
+							"body": "{\n    \"id\": 3,\n    \"PLACA\": \"GHI-9101\",\n    \"MARCA\": \"Ford\",\n    \"MODELO\": \"Fiesta\",\n    \"COR\": \"Prata\",\n    \"ANO\": 2020,\n    \"createdAt\": \"2023-05-06T02:19:44.944Z\",\n    \"updatedAt\": \"2023-05-06T02:19:44.944Z\",\n    \"idcliente\": 1\n}"
 						}
 					]
 				}
@@ -1766,12 +1683,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/tiposervico",
-							"protocol": "http",
+							"raw": "{{base_url}}/tiposervico",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"tiposervico"
 							]
@@ -1785,12 +1700,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/tiposervico/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/tiposervico/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"tiposervico",
 								"1"
@@ -1806,7 +1719,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"Limpeza Completa\",\r\n    \"PRECO\": 26,\r\n    \"DESCRICAO\":\"Serviço de limpeza completa\",\r\n    \"TEMPO_MEDIO\": 25\r\n}",
+							"raw": "{\r\n    \"nome\":\"Limpeza Completa\",\r\n    \"preco\": 26,\r\n    \"descricao\":\"Serviço de limpeza completa\",\r\n    \"tempo_medio\": 25\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1814,12 +1727,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/tiposervico",
-							"protocol": "http",
+							"raw": "{{base_url}}/tiposervico",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"tiposervico"
 							]
@@ -1833,7 +1744,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"NOME\":\"Limpeza Completa\",\r\n    \"PRECO\": 26,\r\n    \"DESCRICAO\":\"Serviço de limpeza completa\",\r\n    \"TEMPO_MEDIO\": 25\r\n}",
+									"raw": "{\r\n    \"nome\":\"Limpeza Completa\",\r\n    \"PRECO\": 26,\r\n    \"DESCRICAO\":\"Serviço de limpeza completa\",\r\n    \"TEMPO_MEDIO\": 25\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1841,12 +1752,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/tiposervico",
-									"protocol": "http",
+									"raw": "{{base_url}}/tiposervico",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"tiposervico"
 									]
@@ -1886,7 +1795,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 5,\n    \"NOME\": \"Limpeza Completa\",\n    \"PRECO\": 26,\n    \"DESCRICAO\": \"Serviço de limpeza completa\",\n    \"TEMPO_MEDIO\": 25,\n    \"createdAt\": \"2023-05-06T02:29:01.076Z\",\n    \"updatedAt\": \"2023-05-06T02:29:01.076Z\"\n}"
+							"body": "{\n    \"id\": 5,\n    \"nome\": \"Limpeza Completa\",\n    \"PRECO\": 26,\n    \"DESCRICAO\": \"Serviço de limpeza completa\",\n    \"TEMPO_MEDIO\": 25,\n    \"createdAt\": \"2023-05-06T02:29:01.076Z\",\n    \"updatedAt\": \"2023-05-06T02:29:01.076Z\"\n}"
 						}
 					]
 				},
@@ -1897,7 +1806,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"NOME\":\"Limpeza Completa\",\r\n    \"PRECO\": 26,\r\n    \"DESCRICAO\":\"Serviço de limpeza completa\",\r\n    \"TEMPO_MEDIO\": 25\r\n}",
+							"raw": "{\r\n    \"nome\":\"Limpeza Completa\",\r\n    \"PRECO\": 26,\r\n    \"DESCRICAO\":\"Serviço de limpeza completa\",\r\n    \"TEMPO_MEDIO\": 25\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1905,12 +1814,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/tiposervico/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/tiposervico/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"tiposervico",
 								"2"
@@ -1925,12 +1832,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/tiposervico/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/tiposervico/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"tiposervico",
 								"2"
@@ -1950,12 +1855,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/agendamento",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento"
 							]
@@ -1978,12 +1881,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/agendamento",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento"
 							]
@@ -2005,12 +1906,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento"
 									]
@@ -2053,7 +1952,7 @@
 							"body": "{\n    \"id\": 52,\n    \"data_entrada\": \"2022-12-04\",\n    \"observacoes_entrada\": \"ABC\",\n    \"createdAt\": \"2023-05-26T22:26:06.998Z\",\n    \"updatedAt\": \"2023-05-26T22:26:06.998Z\",\n    \"idfuncionario\": 1,\n    \"idveiculo\": 4,\n    \"idtipo_servico\": 1,\n    \"funcionario\": {\n        \"id\": 1,\n        \"nome\": \"João Silva\",\n        \"cpf\": \"123.456.789-00\",\n        \"telefone\": \"(31) 99999-9999\",\n        \"email\": \"joao.silva@example.com\",\n        \"senha\": \"123456\",\n        \"rua\": \"rua dos Funcionários\",\n        \"numero\": 123,\n        \"cidade\": \"Belo Horizonte\",\n        \"bairro\": \"Savassi\",\n        \"data_nascimento\": \"1990-01-01\",\n        \"createdAt\": \"2023-05-25T13:58:55.610Z\",\n        \"updatedAt\": \"2023-05-25T13:58:55.610Z\",\n        \"idfilial\": 1,\n        \"filial\": {\n            \"id\": 1,\n            \"nome\": \"Filial A\",\n            \"limite_diario\": 1000,\n            \"rua\": \"rua A\",\n            \"bairro\": \"bairro A\",\n            \"cidade\": \"cidade A\",\n            \"numero\": 123,\n            \"cnpj\": \"12.345.678/0001-90\",\n            \"createdAt\": \"2023-05-25T13:58:55.583Z\",\n            \"updatedAt\": \"2023-05-25T13:58:55.583Z\"\n        }\n    },\n    \"veiculo\": {\n        \"id\": 4,\n        \"placa\": \"JKL-2345\",\n        \"marca\": \"Chevrolet\",\n        \"modelo\": \"Onix\",\n        \"cor\": \"Vermelho\",\n        \"ano\": 2019,\n        \"createdAt\": \"2023-05-25T13:58:55.618Z\",\n        \"updatedAt\": \"2023-05-25T13:58:55.618Z\",\n        \"idcliente\": 3,\n        \"cliente\": {\n            \"id\": 3,\n            \"nome\": \"Ana Souza\",\n            \"cpf\": \"789.123.456-00\",\n            \"telefone\": \"(11) 3333-3333\",\n            \"email\": \"ana.souza@gmail.com\",\n            \"qtd_lavagem\": 5,\n            \"senha\": \"senha1\",\n            \"rua\": \"rua dos Pinheiros\",\n            \"numero\": 300,\n            \"cidade\": \"São Paulo\",\n            \"bairro\": \"Pinheiros\",\n            \"data_nascimento\": \"1990-11-15\",\n            \"is_devedor\": false,\n            \"createdAt\": \"2023-05-25T13:58:55.548Z\",\n            \"updatedAt\": \"2023-05-25T13:58:55.548Z\"\n        }\n    },\n    \"tipo_servico\": {\n        \"id\": 1,\n        \"nome\": \"Lavagem Simples\",\n        \"preco\": 30,\n        \"descricao\": \"Lavagem com água, sabão e secagem com pano.\",\n        \"tempo_medio\": 30,\n        \"createdAt\": \"2023-05-25T13:58:55.598Z\",\n        \"updatedAt\": \"2023-05-25T13:58:55.598Z\"\n    }\n}"
 						},
 						{
-							"name": "Regra de Negócio 1 - Cliente é devedor",
+							"name": "Regra de Negócio 1 - cliente é devedor",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2067,12 +1966,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento"
 									]
@@ -2112,10 +2009,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Agendamento não pode ser realizado. Cliente possui débito a ser pago.\"\n}"
+							"body": "{\n    \"message\": \"Agendamento não pode ser realizado. cliente possui débito a ser pago.\"\n}"
 						},
 						{
-							"name": "Regra de Negócio 2 - Funcionário e Cliente são os mesmos",
+							"name": "Regra de Negócio 2 - Funcionário e cliente são os mesmos",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2129,12 +2026,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento"
 									]
@@ -2193,12 +2088,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/agendamento/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento",
 								"2"
@@ -2221,12 +2114,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento/3",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/3",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"3"
@@ -2284,12 +2175,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento/2",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/2",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"2"
@@ -2347,12 +2236,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3333/agendamento/200",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/200",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"200"
@@ -2403,12 +2290,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/agendamento/5",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento/5",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento",
 								"5"
@@ -2422,12 +2307,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/agendamento/5",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/5",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"5"
@@ -2483,12 +2366,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/finalizacao",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao"
 							]
@@ -2502,12 +2383,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/finalizacao/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao",
 								"1"
@@ -2523,7 +2402,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"data_saida\":\"2023-06-22\",\r\n    \"observacoes_saida\":\"Teste de finalização\",\r\n    \"conf_pag\": true,\r\n    \"id_agendamento\": \"7\",\r\n    \"agendamento\": {\r\n        \"id\": 7\r\n    },\r\n    \"id_forma_pagamento\":\"1\",\r\n        \"forma_pagamento\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"data_saida\":\"2023-06-22\",\r\n    \"observacoes_saida\":\"Teste de finalização\",\r\n    \"conf_pag\": true,\r\n    \"id_agendamento\": \"2\",\r\n    \"agendamento\": {\r\n        \"id\": 2\r\n    },\r\n    \"id_forma_pagamento\":\"1\",\r\n        \"forma_pagamento\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2531,12 +2410,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/finalizacao",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao"
 							]
@@ -2559,12 +2436,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/finalizacao/2",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao/2",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao",
 								"2"
@@ -2579,12 +2454,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/finalizacao/1",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao/1",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao",
 								"1"
@@ -2604,12 +2477,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/agendamento/2023-04-02/2023-08-02/JKL-2345",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento/2023-04-02/2023-08-02/JKL-2345",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento",
 								"2023-04-02",
@@ -2625,12 +2496,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/agendamento/2023-04-02/2023-08-02/JKL-2345",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/2023-04-02/2023-08-02/JKL-2345",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"2023-04-02",
@@ -2678,17 +2547,15 @@
 					]
 				},
 				{
-					"name": "Agendamento por Cliente",
+					"name": "Agendamento por cliente",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/agendamento/2023-04-02/2023-06-31",
-							"protocol": "http",
+							"raw": "{{base_url}}/agendamento/2023-04-02/2023-06-31",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"agendamento",
 								"2023-04-02",
@@ -2698,17 +2565,15 @@
 					},
 					"response": [
 						{
-							"name": "[200 OK] Relatório Agendamento agrupado por Cliente",
+							"name": "[200 OK] Relatório Agendamento agrupado por cliente",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/agendamento/2023-04-02/2023-06-03",
-									"protocol": "http",
+									"raw": "{{base_url}}/agendamento/2023-04-02/2023-06-03",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"agendamento",
 										"2023-04-02",
@@ -2750,7 +2615,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"Nome\": \"Camila Silva\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 30\n    },\n    {\n        \"Nome\": \"Lucas Santos\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 510\n    },\n    {\n        \"Nome\": \"Paulo Oliveira\",\n        \"Total_Agendamentos\": 1,\n        \"Total\": 30\n    }\n]"
+							"body": "[\n    {\n        \"nome\": \"Camila Silva\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 30\n    },\n    {\n        \"nome\": \"Lucas Santos\",\n        \"Total_Agendamentos\": 9,\n        \"Total\": 510\n    },\n    {\n        \"nome\": \"Paulo Oliveira\",\n        \"Total_Agendamentos\": 1,\n        \"Total\": 30\n    }\n]"
 						}
 					]
 				},
@@ -2760,12 +2625,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31/Filial A",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao/2023-04-02/2023-06-31/Filial A",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao",
 								"2023-04-02",
@@ -2781,12 +2644,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-03/FilialA",
-									"protocol": "http",
+									"raw": "{{base_url}}/finalizacao/2023-04-02/2023-06-03/FilialA",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"finalizacao",
 										"2023-04-02",
@@ -2839,12 +2700,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31",
-							"protocol": "http",
+							"raw": "{{base_url}}/finalizacao/2023-04-02/2023-06-31",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3333",
 							"path": [
 								"finalizacao",
 								"2023-04-02",
@@ -2859,12 +2718,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3333/finalizacao/2023-04-02/2023-06-31",
-									"protocol": "http",
+									"raw": "{{base_url}}/finalizacao/2023-04-02/2023-06-31",
 									"host": [
-										"localhost"
+										"{{base_url}}"
 									],
-									"port": "3333",
 									"path": [
 										"finalizacao",
 										"2023-04-02",
