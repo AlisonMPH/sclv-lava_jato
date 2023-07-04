@@ -24,9 +24,9 @@ class AgendamentoService {
 
         if (await this.validaRegras(req)) {
             const t = await sequelize.transaction();
-            const obj = await AgendamentoServico.create({ data_entrada, observacoes_entrada, idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id }, { transaction: t });
+            const obj = await AgendamentoServico.create({ data_entrada, observacoes_entrada, status: "AGENDADO", idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id }, { transaction: t });
             try {
-                await Status.create({ status: "AGENDADO", idagendamento: obj.id }, { transaction: t }) // Adiciona status inical para o agendamento
+                // await Status.create({ status: "AGENDADO", idagendamento: obj.id }, { transaction: t }) // Adiciona status inical para o agendamento
                 await t.commit();
                 return await AgendamentoServico.findByPk(obj.id, { include: { all: true, nested: true } });
             } catch (error) {
