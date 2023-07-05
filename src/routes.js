@@ -7,6 +7,7 @@ import { ClienteController } from "./controllers/ClienteController.js";
 import { VeiculoController } from "./controllers/VeiculoController.js";
 import { AgendamentoController } from "./controllers/AgendamentoController.js";
 import { FinalizacoesController } from "./controllers/FinalizacoesController.js"
+import { FormaPagamentoController } from "./controllers/FormaPagamentoController.js";
 
 const routes = express.Router();
 
@@ -57,5 +58,8 @@ routes.delete('/finalizacao/:id', FinalizacoesController.delete);
 // ROTAS DOS RELATÓRIOS DE RECEITAS
 routes.get('/finalizacao/:inicio/:termino/:nome', FinalizacoesController.relatorioDeReceitaPorFilial);
 routes.get('/finalizacao/:inicio/:termino', FinalizacoesController.relatorioDeReceitaTotal);
+
+routes.get('/formapagamento', FormaPagamentoController.findAll);
+
 
 export default routes;

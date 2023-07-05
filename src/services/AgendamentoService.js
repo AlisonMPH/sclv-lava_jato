@@ -2,7 +2,6 @@
 import { AgendamentoServico } from "../models/AgendamentoServico.js";
 import { VeiculoService } from "./VeiculoService.js";
 import sequelize from '../config/database-inserts.js';
-import { Status } from "../models/Status.js";
 import { QueryTypes } from 'sequelize';
 import { FuncionarioService } from "./FuncionarioService.js";
 
@@ -26,7 +25,6 @@ class AgendamentoService {
             const t = await sequelize.transaction();
             const obj = await AgendamentoServico.create({ data_entrada, observacoes_entrada, status: "AGENDADO", idfuncionario: funcionario.id, idveiculo: veiculo.id, idtipo_servico: tipo_servico.id }, { transaction: t });
             try {
-                // await Status.create({ status: "AGENDADO", idagendamento: obj.id }, { transaction: t }) // Adiciona status inical para o agendamento
                 await t.commit();
                 return await AgendamentoServico.findByPk(obj.id, { include: { all: true, nested: true } });
             } catch (error) {
@@ -104,14 +102,14 @@ class AgendamentoService {
     }
 
     static async calcularTotal(id) {
-        const total = await sequelize.query("SELECT agendamentos.idtipo_servico AS servico, SUM(preco) AS total FROM agendamentos INNER JOIN tipo_servicos ON agendamentos.idtipo_servico = tipo_servicos.id WHERE agendamentos.id = :id", { replacements: { id: id }, type: QueryTypes.SELECT });
+        const total = await sequelize.query("SELECT agendamentos.idtipo_servico AS servico, SUM(preco) AS total FROM agendamentos INNER JOIN tipo_servicos ON agendamentos.idtipo_servico = tipo_servicos.id WHERE agendamentos.id = :id GROUP BY agendamentos.idtipo_servico", { replacements: { id: id }, type: QueryTypes.SELECT });
         return total;
     }
 
     // Relatórios
     static async relatorioDeAgendamentoPorVeiculo(req) {
         const { inicio, termino, placa } = req.params;
-        const objs = await sequelize.query("SELECT agendamentos.id, tipo_servicos.id AS tipo_servico_id, tipo_servicos.nome AS tipo_servico_nome, finalizacoes.valor_total, COUNT(tipo_servicos.id) quantidade, agendamentos.status FROM agendamentos INNER JOIN veiculos ON agendamentos.idveiculo = veiculos.id INNER JOIN tipo_servicos ON agendamentos.idtipo_servico = tipo_servicos.id LEFT JOIN finalizacoes ON agendamentos.id = finalizacoes.id_agendamento WHERE veiculos.placa = :placa AND agendamentos.created_at BETWEEN :inicio AND :termino GROUP BY tipo_servicos.nome", { replacements: { inicio: inicio, termino: termino, placa: placa }, type: QueryTypes.SELECT });
+        const objs = await sequelize.query("SELECT agendamentos.id, tipo_servicos.id AS tipo_servico_id, tipo_servicos.nome AS tipo_servico_nome, finalizacoes.valor_total, COUNT(tipo_servicos.id) quantidade, agendamentos.status FROM agendamentos INNER JOIN veiculos ON agendamentos.idveiculo = veiculos.id INNER JOIN tipo_servicos ON agendamentos.idtipo_servico = tipo_servicos.id LEFT JOIN finalizacoes ON agendamentos.id = finalizacoes.id_agendamento WHERE veiculos.placa = :placa AND agendamentos.created_at BETWEEN :inicio AND :termino GROUP BY agendamentos.id, tipo_servicos.id, tipo_servicos.nome, finalizacoes.valor_total, agendamentos.status", { replacements: { inicio: inicio, termino: termino, placa: placa }, type: QueryTypes.SELECT });
         return objs;
     }
 

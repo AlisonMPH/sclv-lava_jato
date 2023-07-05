@@ -17,13 +17,14 @@ class Finalizacoes extends Model {
           }
         },
         conf_pag: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.BOOLEAN,
           validate: {
             
           }
         },
         valor_total: {
           type: DataTypes.FLOAT,
+          defaultValue: 0.00,
           validate: {
             
           }

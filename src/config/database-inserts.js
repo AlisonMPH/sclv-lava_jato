@@ -283,6 +283,7 @@ function databaseInserts() {
     const agendamento1 = await AgendamentoServico.create({
       data_entrada: "2022-04-12",
       observacoes_entrada: "Ahshhsjahj",
+      status: "FINALIZADO",
       idfuncionario: 2,
       idveiculo: 1,
       idtipo_servico: 1
@@ -291,6 +292,7 @@ function databaseInserts() {
     const agendamento2 = await AgendamentoServico.create({
       data_entrada: "2022-04-12",
       observacoes_entrada: "Teste 2",
+      status: "AGENDADO",
       idfuncionario: 1,
       idveiculo: 2,
       idtipo_servico: 1
