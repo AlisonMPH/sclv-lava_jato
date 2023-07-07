@@ -15,9 +15,9 @@ class ClienteService {
     }
 
     static async create(req) {
-        const { nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento } = req.body;
+        const { nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento, is_devedor } = req.body;
         if (bairro == null) throw 'O bairro do Cliente deve ser preenchido!';
-        const obj = await Cliente.create({ nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento });
+        const obj = await Cliente.create({ nome, cpf, telefone, email, senha, rua, numero, cidade, bairro, data_nascimento, is_devedor });
         return await Cliente.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 
